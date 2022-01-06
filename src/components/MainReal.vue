@@ -1,6 +1,12 @@
 <template>
 	<div class="main-real box">
-		<lottie-player src="../assets/lottie/crown.json"  background="transparent" speed="1" loop autoplay></lottie-player>
+		<lottie-animation
+		    path="lottie/crown-2.json"
+		    :loop="true"
+		    :autoPlay="true"
+		    :speed="1"
+		    class="crown"
+		/>
 
 		<div class="banner-dots" id="rexmd-dots-wrapper" style="width:230px;height:230px;">
 			<canvas class="dot-pattern-2" id="dot-pattern-2" width="230" height="230"></canvas>
@@ -21,6 +27,12 @@
 			<form action="#" class="form-real">
 				<div class="field">
 					<input type="text" placeholder="Promo Code FREEGIFT has been applied!">
+					<lottie-animation
+					    path="lottie/checkbox.json"
+					    :loop="true"
+					    :autoPlay="true"
+					    :speed="1"
+					/>
 				</div>
 				<p>ORDER SUMMARY</p>
 				<ul>
@@ -61,23 +73,38 @@
 			</form>
 
 			<div class="foot-real">
-				<img src="../assets/img/rating.png" alt="">
+				<lottie-animation
+				    path="lottie/trust.json"
+				    :loop="true"
+				    :autoPlay="true"
+				    :speed="1"
+				    class="trust"
+				/>
 
 				<ul>
 					<li>
-						<i class="ic-rx"></i>
-						<p>U.S. Licensed<br>
-						Pharmacy</p>
+						<lottie-animation
+						    path="lottie/pharmacy.json"
+						    :loop="true"
+						    :autoPlay="true"
+						    :speed="1"
+						/>
 					</li>
 					<li>
-						<i class="ic-hippa"></i>
-						<p><strong>HipAA<br>
-						Compliant</strong></p>
+						<lottie-animation
+						    path="lottie/hippa.json"
+						    :loop="true"
+						    :autoPlay="true"
+						    :speed="1"
+						/>
 					</li>
 					<li>
-						<i class="ic-licensed"></i>
-						<p><strong>U.S Licensed<br> 
-						PHYSICIANS</strong></p>
+						<lottie-animation
+						    path="lottie/physicians.json"
+						    :loop="true"
+						    :autoPlay="true"
+						    :speed="1"
+						/>
 					</li>
 				</ul>
 
@@ -94,99 +121,106 @@
 </template>
 
 <script>
-	// function animateDots(){
-	//     var stageWidth;
-	//     var stageHeight;
-	//     var dotPatternCanvas2 = document.getElementById("dot-pattern-2");
-	//     var context2 = dotPatternCanvas2.getContext("2d");
-	//     var objectList;
-	//     var timeout;
-	//     var smallDotSize = 1;
-	//     var bigDotSize = 2;
-	//     var prms = { fps: 6, objectDistance: 15, objectWidth: bigDotSize, objectRotationV: Math.PI * 0.09, objectRadius: 0 };
-	//     var xAngle = 25;
-	//     var yAngle = 65;
-	//     //$(window).resize(reset);
-	//     window.addEventListener('resize', reset);
-	//     reset();
-	//     function reset() {
-	//         //stageWidth = $("#rexmd-dots-wrapper").width();
-	//         //stageHeight = $("#rexmd-dots-wrapper").height();
-	//         stageWidth  = document.querySelector("#rexmd-dots-wrapper").clientWidth;
-	//         stageHeight = document.querySelector("#rexmd-dots-wrapper").clientHeight;
-	//         //$("#rexmd-dots-wrapper canvas").attr("width", stageWidth);
-	//         document.querySelector('#rexmd-dots-wrapper canvas').setAttribute("width", stageWidth);
-	//         //$("#rexmd-dots-wrapper canvas").attr("height", stageHeight);
-	//         document.querySelector('#rexmd-dots-wrapper canvas').setAttribute("height", stageHeight);
-	//         objectList = [];
-	//         var x = 4;
-	//         var y = 4;
-	//         while (x < stageWidth + prms.objectDistance * 0.5) {
-	//             y = 4;
-	//             while (y < stageHeight + prms.objectDistance * 0.5) {
-	//                 var xDistance = x - stageWidth * xAngle;
-	//                 var yDistance = y - stageHeight * yAngle;
-	//                 var distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
-	//                 var circleRotation = Math.PI * 0.005 * distance;
-	//                 objectList.push(new Circle(x, y, circleRotation));
-	//                 y += prms.objectDistance;
-	//             }
-	//             x += prms.objectDistance;
-	//         }
-	//         if (timeout) {
-	//             clearTimeout(timeout);
-	//         }
-	//         timeout = setTimeout(onEnterFrame, 1000 / prms.fps);
-	//     }
-	//     function Circle(_x, _y, _rotation) {
-	//         this.x = _x;
-	//         this.y = _y;
-	//         this.vx = 0;
-	//         this.vy = 0;
-	//         this.ax = 0;
-	//         this.ay = 0;
-	//         this.rotation = _rotation;
-	//         this.cx = _x;
-	//         this.cy = _y;
-	//     }
-	//     Circle.prototype.width = prms.objectWidth;
-	//     Circle.prototype.rotationV = prms.objectRotationV;
-	//     Circle.prototype.radius = prms.objectRadius;
-	//     Circle.prototype.tick = function () {
-	//         this.rotation += this.rotationV;
-	//         this.x = this.radius * Math.cos(this.rotation) + this.cx;
-	//         this.y = this.radius * Math.sin(this.rotation) + this.cy;
-	//         this.width = (smallDotSize + Math.cos(this.rotation)) * Circle.prototype.width;
-	//     };
-	//     Circle.prototype.draw = function (_context) {
-	//         _context.beginPath();
-	//         _context.arc(this.x, this.y, this.width * 0.4, 0, Math.PI * 2, false);
-	//         _context.fill();
-	//         _context.closePath();
-	//     };
-	//     function onEnterFrame() {
-	//         var len = objectList.length;
-	//         var object;
-	//         while (len > 0) {
-	//             len -= 1;
-	//             object = objectList[len];
-	//             object.tick();
-	//         }
-	//         context2.clearRect(0, 0, stageWidth, stageHeight);
-	//         context2.fillStyle = "#c0c4ce";
-	//         len = objectList.length;
-	//         while (len > 0) {
-	//             len -= 1;
-	//             object = objectList[len];
-	//             object.draw(context2);
-	//         }
-	//         timeout = setTimeout(onEnterFrame, 1000 / prms.fps);
-	//     }
-	// };
+	import LottieAnimation from "lottie-vuejs/src/LottieAnimation.vue";
 
-	// window.addEventListener('load', function() {
-	// 	animateDots();
-	// });
+	export default {
+		components: {
+			LottieAnimation
+		}
+	}
+	function animateDots(){
+	    var stageWidth;
+	    var stageHeight;
+	    var dotPatternCanvas2 = document.getElementById("dot-pattern-2");
+	    var context2 = dotPatternCanvas2.getContext("2d");
+	    var objectList;
+	    var timeout;
+	    var smallDotSize = 1;
+	    var bigDotSize = 2;
+	    var prms = { fps: 6, objectDistance: 15, objectWidth: bigDotSize, objectRotationV: Math.PI * 0.09, objectRadius: 0 };
+	    var xAngle = 25;
+	    var yAngle = 65;
+	    //$(window).resize(reset);
+	    window.addEventListener('resize', reset);
+	    reset();
+	    function reset() {
+	        //stageWidth = $("#rexmd-dots-wrapper").width();
+	        //stageHeight = $("#rexmd-dots-wrapper").height();
+	        stageWidth  = document.querySelector("#rexmd-dots-wrapper").clientWidth;
+	        stageHeight = document.querySelector("#rexmd-dots-wrapper").clientHeight;
+	        //$("#rexmd-dots-wrapper canvas").attr("width", stageWidth);
+	        document.querySelector('#rexmd-dots-wrapper canvas').setAttribute("width", stageWidth);
+	        //$("#rexmd-dots-wrapper canvas").attr("height", stageHeight);
+	        document.querySelector('#rexmd-dots-wrapper canvas').setAttribute("height", stageHeight);
+	        objectList = [];
+	        var x = 4;
+	        var y = 4;
+	        while (x < stageWidth + prms.objectDistance * 0.5) {
+	            y = 4;
+	            while (y < stageHeight + prms.objectDistance * 0.5) {
+	                var xDistance = x - stageWidth * xAngle;
+	                var yDistance = y - stageHeight * yAngle;
+	                var distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
+	                var circleRotation = Math.PI * 0.005 * distance;
+	                objectList.push(new Circle(x, y, circleRotation));
+	                y += prms.objectDistance;
+	            }
+	            x += prms.objectDistance;
+	        }
+	        if (timeout) {
+	            clearTimeout(timeout);
+	        }
+	        timeout = setTimeout(onEnterFrame, 1000 / prms.fps);
+	    }
+	    function Circle(_x, _y, _rotation) {
+	        this.x = _x;
+	        this.y = _y;
+	        this.vx = 0;
+	        this.vy = 0;
+	        this.ax = 0;
+	        this.ay = 0;
+	        this.rotation = _rotation;
+	        this.cx = _x;
+	        this.cy = _y;
+	    }
+	    Circle.prototype.width = prms.objectWidth;
+	    Circle.prototype.rotationV = prms.objectRotationV;
+	    Circle.prototype.radius = prms.objectRadius;
+	    Circle.prototype.tick = function () {
+	        this.rotation += this.rotationV;
+	        this.x = this.radius * Math.cos(this.rotation) + this.cx;
+	        this.y = this.radius * Math.sin(this.rotation) + this.cy;
+	        this.width = (smallDotSize + Math.cos(this.rotation)) * Circle.prototype.width;
+	    };
+	    Circle.prototype.draw = function (_context) {
+	        _context.beginPath();
+	        _context.arc(this.x, this.y, this.width * 0.4, 0, Math.PI * 2, false);
+	        _context.fill();
+	        _context.closePath();
+	    };
+	    function onEnterFrame() {
+	        var len = objectList.length;
+	        var object;
+	        while (len > 0) {
+	            len -= 1;
+	            object = objectList[len];
+	            object.tick();
+	        }
+	        context2.clearRect(0, 0, stageWidth, stageHeight);
+	        context2.fillStyle = "#c0c4ce";
+	        len = objectList.length;
+	        while (len > 0) {
+	            len -= 1;
+	            object = objectList[len];
+	            object.draw(context2);
+	        }
+	        timeout = setTimeout(onEnterFrame, 1000 / prms.fps);
+	    }
+	};
+
+	window.addEventListener('load', function() {
+	 	animateDots();
+	});
 </script>
 
 <style>
@@ -202,6 +236,15 @@
 	    transform: translate(-50%, -50%);
 	    top: -6%;
 	    transform: translate(-50%, 0%);
+	}
+
+	.crown {
+		max-width: 70px;
+	    position: absolute;
+	    bottom: 100%;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    margin: 0 0 -15px !important;
 	}
 
 	.main-real .banner-dots {
@@ -256,15 +299,12 @@
 		color: var(--blue);
 	}
 	.form-real .field input::placeholder {color: var(--blue);}
-	.form-real .field:after {
-		content: '';
-		display: block;
-		width: 60px;
+	.form-real .field > div {
+		max-width: 60px;
 		position: absolute;
 		top: 0;
 		right: 0;
 		bottom: 0;
-		background: var(--blue) url(../assets/img/check.png) no-repeat center;
 	}
 
 	.form-real p {
@@ -368,9 +408,10 @@
 	  }
 	}
 
-	.foot-real > img {
-		margin: 33px auto 25px auto;
+	.foot-real .trust {
+		margin: 40px auto 25px auto !important;
 		display: block;
+		max-width: 370px;
 	}
 	.foot-real ul {
 	    display: flex;
@@ -383,6 +424,9 @@
 	}
 	.foot-real ul li + li {
 	    margin-left: 30px;
+	}
+	.foot-real ul li div {
+		max-width: 180px;
 	}
 	.foot-real ul li:last-child i {
 	    position: relative;

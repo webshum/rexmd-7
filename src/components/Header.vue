@@ -6,9 +6,25 @@
 	</header>
 
 	<div class="head-line">
+		<lottie-animation
+		    path="lottie/birca.json"
+		    :loop="true"
+		    :autoPlay="true"
+		    :speed="1"
+		/>
 		<p>Sample pack discount activated + online consultation & rushed shipping for free!</p>
 	</div>
 </template>
+
+<script>
+	import LottieAnimation from "lottie-vuejs/src/LottieAnimation.vue";
+
+	export default {
+		components: {
+			LottieAnimation
+		}
+	}
+</script>
 
 <style scoped>
 	header {
@@ -28,14 +44,13 @@
 	    text-align: center;
 	    color: var(--blue);
 	    padding: 5px 0;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
 	}
-	.head-line p:before {
-	    content: '';
-	    display: inline-block;
-	    vertical-align: middle;
-	    width: 28px;
-	    height: 32px;
-	    background: url(../assets/img/ic-percent.png) no-repeat;
-	    margin-right: 11px;
+	.head-line div {
+	    max-width: 28px;
+	    margin: 0 10px 0 !important;
+	    line-height: 0;
 	}
 </style>
