@@ -7,11 +7,11 @@
 		</div>
 
 		<div class="inner">
-			<h2>Lowest ED Prices...<br> <span>Guaranteed!</span></h2>
+			<h2 class="js-scroll fade-bottom">Lowest ED Prices...<br> <span>Guaranteed!</span></h2>
 
-			<p><strong class="f-500">We’ve cut out the middleman</strong> so we can<br> provide the exact same meds, cheaper<br> than any competitor, or we’ll match it.</p>
+			<p class="js-scroll fade-bottom"><strong class="f-500">We’ve cut out the middleman</strong> so we can<br> provide the exact same meds, cheaper<br> than any competitor, or we’ll match it.</p>
 
-			<img src="../assets/img/tablets.png" alt="" class="tablets">					
+			<img src="../assets/img/tablets.png" alt="" class="tablets js-scroll fade-scale">					
 
 			<div class="slider-reviews">
 			    <div class="slider-container">
@@ -81,9 +81,9 @@
 			</div>
 
 			<div class="hide-768">
-				<h3 class="an an-top">The <span>Best Choice</span> for<br> ED Meds Online.</h3>			
+				<h3 class="an an-top js-scroll fade-bottom">The <span>Best Choice</span> for<br> ED Meds Online.</h3>			
 				<img src="../assets/img/poste.png" alt="">
-				<div class="foot">It couldn’t be any easier. Once prescribed, your<br>
+				<div class="foot js-scroll fade-bottom">It couldn’t be any easier. Once prescribed, your<br>
 				prescription is rushed direct from the pharmacy.</div>
 			</div>					
 		</div>
@@ -427,7 +427,7 @@
 	});    
 </script>
 
-<style scoped>
+<style>
 	.main-price {
 	    display: flex;
 	    flex-direction: column;
@@ -436,7 +436,7 @@
 	}
 
 	.main-price .inner {
-	    max-width: 375px;
+	    max-width: 390px;
 	    width: 100%;
 	    padding: 0 20px;
 	}

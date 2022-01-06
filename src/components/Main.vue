@@ -1,16 +1,16 @@
 <template>
 	<main class="center">
 		<div class="main-timer">
-			<h2>
+			<h2 class="js-scroll fade-bottom">
 				<span>Congrats!</span> You’ve scored the lowest price
 				<lottie-animation
 				    path="lottie/lock.json"
-				    :loop="true"
+				    :loop="false"
 				    :autoPlay="true"
 				    :speed="1"
 				/>
 			</h2>
-			<div class="timer">Bryant, your treatment is reserved for 07:59:05</div>
+			<div class="timer js-scroll fade-bottom">Bryant, your treatment is reserved for <span id="stopwatch">{{ timer }}</span></div>
 		</div>
 
 		<div class="flex">
@@ -30,6 +30,36 @@
 	export default {
 		components: {
 			MainQuick, MainReal, MainPrice, LottieAnimation
+		},
+		data() {
+			return {
+				timer: '00:00:00'
+			}
+		},
+		methods: {
+			addTimer() {
+				var spd = 100;
+		        var spdVal = 10;
+		        var cntDown = 0 * 60 * spdVal;
+		        setInterval(function () {
+		            var mn, sc, ms;
+		            cntDown++;
+		            if(cntDown < 0) {
+		                return false;
+		            }
+		            mn = Math.floor((cntDown / spdVal) / 60 );
+		            mn = (mn < 10 ? '0' + mn : mn);
+		            sc = Math.floor((cntDown / spdVal) % 60);
+		            sc = (sc < 10 ? '0' + sc : sc);
+		            ms = Math.floor(cntDown % spdVal);
+		            ms = (ms < 10 ? '0' + ms : ms);
+		            var result = mn + ':' + sc + ':' + ms;
+		            document.getElementById('stopwatch').innerHTML = result;
+		        }, spd);
+			}
+		},
+		mounted() {
+			this.addTimer();
 		}
 	}
 </script>
@@ -46,10 +76,15 @@
 	.main-timer h2 div {
 		display: inline-block;
 		vertical-align: middle;
-		max-width: 25px;
+		max-width: 35px;
 		margin: 0 0 0 0 !important;
 	}
 	.main-timer .timer {font-size: 20px;}
+	#stopwatch {
+		display: inline-block;
+		min-width: 90px;
+		text-align: left;
+	}
 
 	.flex {
 		display: flex;

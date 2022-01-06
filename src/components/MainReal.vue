@@ -2,74 +2,114 @@
 	<div class="main-real box">
 		<lottie-animation
 		    path="lottie/crown-2.json"
-		    :loop="true"
+		    :loop="false"
 		    :autoPlay="true"
 		    :speed="1"
 		    class="crown"
 		/>
 
-		<div class="banner-dots" id="rexmd-dots-wrapper" style="width:230px;height:230px;">
-			<canvas class="dot-pattern-2" id="dot-pattern-2" width="230" height="230"></canvas>
+		<div class="banner-dots" id="rexmd-dots-wrapper" style="width:190px;height:190px;">
+			<canvas class="dot-pattern-2" id="dot-pattern-2" width="190px" height="190px"></canvas>
 		</div>
 
 		<div class="inner">
-			<div class="real-head">
-				<div>
-					<p>ORDER DETAILS</p>
-					<h3>50mg Sildenafil</h3>
-					<div>3 Month Supply, 60 tablets<br>
-	                Every 3 Months</div>
+			<form action="#" class="form-real">
+				<div class="form-box">
+					<div class="real-head">
+						<div>
+							<p class="js-scroll fade-top">ORDER DETAILS</p>
+							<h3 class="js-scroll fade-top">50mg Sildenafil</h3>
+							<div class="js-scroll fade-bottom">3 Month Supply, 60 tablets<br>
+			                Every 3 Months</div>
+						</div>
+						
+		                <img src="../assets/img/pill.png" alt="" class="js-scroll fade-scale">
+					</div>
+
+					<div class="field js-scroll fade-bottom">
+						<input type="text" placeholder="Promo Code FREEGIFT has been applied!">
+						<lottie-animation
+						    path="lottie/checkbox.json"
+						    :loop="true"
+						    :autoPlay="true"
+						    :speed="1"
+						/>
+					</div>
 				</div>
 				
-                <img src="../assets/img/pill.png" alt="">
-			</div>
+				<div class="wrap">
+					<p class="js-scroll fade-bottom">ORDER SUMMARY</p>
+					<ul class="list">
+						<li class="js-scroll fade-bottom">
+							<div class="title">Free Bonus Gift <span class="throw">($39 Value)</span></div>
+							<div class="price f-500">FREE</div>
+						</li>
+						<li class="js-scroll fade-bottom">
+							<div class="title">Physician Consultation <span class="throw">($40 Value)</span></div>
+							<div class="price f-500">FREE</div>
+						</li>
+						<li class="js-scroll fade-bottom">
+							<div class="title">ED Treatment Total</div>
+							<div class="price f-500">$120.00</div>
+						</li>
+						<li class="c-red f-500 js-scroll fade-bottom">
+							<div class="title">XX% Instant Savings</div>
+							<div class="price c-red f-500">-$18.00</div>
+						</li>
+						<li class="js-scroll fade-bottom">
+							<div class="title">2-Day Rush Delivery <span class="throw">($15 Value)</span></div>
+							<div class="price f-500">FREE</div>
+						</li>
+					</ul>
 
-			<form action="#" class="form-real">
-				<div class="field">
-					<input type="text" placeholder="Promo Code FREEGIFT has been applied!">
+					<div class="total js-scroll fade-bottom">
+						<div class="title">Today’s Discounted Total</div>
+						<div class="price"><span>USD</span> $102.00</div>
+					</div>
+
+					<div class="group">
+						<button class="btn shadow-pulse">
+							<div class="arr animationend"></div>
+							CONTINUE TO FINAL STEP
+						</button>
+						<button class="btn back js-scroll fade-bottom">PREVIOUS STEP</button>
+					</div>
+
 					<lottie-animation
-					    path="lottie/checkbox.json"
+					    path="lottie/trust.json"
 					    :loop="true"
 					    :autoPlay="true"
 					    :speed="1"
+					    class="trust js-scroll fade-bottom show-991 d-none js-lottie"
 					/>
-				</div>
-				<p>ORDER SUMMARY</p>
-				<ul>
-					<li>
-						<div class="title">Free Bonus Gift <span class="throw">($39 Value)</span></div>
-						<div class="price f-500">FREE</div>
-					</li>
-					<li>
-						<div class="title">Physician Consultation <span class="throw">($40 Value)</span></div>
-						<div class="price f-500">FREE</div>
-					</li>
-					<li>
-						<div class="title">ED Treatment Total</div>
-						<div class="price f-500">$120.00</div>
-					</li>
-					<li class="c-red f-500">
-						<div class="title">XX% Instant Savings</div>
-						<div class="price c-red f-500">-$18.00</div>
-					</li>
-					<li>
-						<div class="title">2-Day Rush Delivery <span class="throw">($15 Value)</span></div>
-						<div class="price f-500">FREE</div>
-					</li>
-				</ul>
 
-				<div class="total">
-					<div class="title">Today’s Discounted Total</div>
-					<div class="price"><span>USD</span> $102.00</div>
-				</div>
-
-				<div class="group">
-					<button class="btn shadow-pulse">
-						<div class="arr animationend"></div>
-						CONTINUE TO FINAL STEP
-					</button>
-					<button class="btn back">PREVIOUS STEP</button>
-				</div>
+					<ul class="show-991 d-none">
+						<li class="js-scroll fade-bottom">
+							<lottie-animation
+							    path="lottie/pharmacy.json"
+							    :loop="true"
+							    :autoPlay="true"
+							    :speed="1"
+							/>
+						</li>
+						<li class="js-scroll fade-bottom">
+							<lottie-animation
+							    path="lottie/hippa.json"
+							    :loop="true"
+							    :autoPlay="true"
+							    :speed="1"
+							/>
+						</li>
+						<li class="js-scroll fade-bottom">
+							<lottie-animation
+							    path="lottie/physicians.json"
+							    :loop="true"
+							    :autoPlay="true"
+							    :speed="1"
+							/>
+						</li>
+					</ul>
+				</div>				
 			</form>
 
 			<div class="foot-real">
@@ -78,11 +118,11 @@
 				    :loop="true"
 				    :autoPlay="true"
 				    :speed="1"
-				    class="trust"
+				    class="trust js-scroll fade-bottom hide-991"
 				/>
 
-				<ul>
-					<li>
+				<ul class="hide-991">
+					<li class="js-scroll fade-bottom">
 						<lottie-animation
 						    path="lottie/pharmacy.json"
 						    :loop="true"
@@ -90,7 +130,7 @@
 						    :speed="1"
 						/>
 					</li>
-					<li>
+					<li class="js-scroll fade-bottom">
 						<lottie-animation
 						    path="lottie/hippa.json"
 						    :loop="true"
@@ -98,7 +138,7 @@
 						    :speed="1"
 						/>
 					</li>
-					<li>
+					<li class="js-scroll fade-bottom">
 						<lottie-animation
 						    path="lottie/physicians.json"
 						    :loop="true"
@@ -109,11 +149,48 @@
 				</ul>
 
 				<div class="product">
-					<h3>Satisfaction <span>Guaranteed.</span></h3>
-					<p>Improve your symptoms & lifestyle, worry-free.</p>
+					<h3 class="js-scroll fade-bottom">Satisfaction <span>Guaranteed.</span></h3>
+					<p class="js-scroll fade-bottom">Improve your symptoms & lifestyle, worry-free.</p>
 					<img src="../assets/img/product.png" alt="">
-					<p>If you’re not crazy about your results, just<br>
+					<p class="js-scroll fade-bottom">If you’re not crazy about your results, just<br>
 					contact us and we’ll take care of you. SImple!</p>
+
+					<div class="show-991" hidden>
+						<h2 class="js-scroll fade-top">Quick. Simple.<br> <span>Safe. Convenient.</span></h2>
+						<p class="js-scroll fade-top">No waiting rooms, no trips to the <br>doctor, no insurance or co-pays. </p>
+						<ul class="icons">
+							<li class="js-scroll fade-bottom">
+								<div class="icon">
+									<img src="../assets/img/icon-1.png" alt="">
+								</div>
+								<p>The <span>Lowest Price</span><br> Per Pill, Guaranteed</p>
+							</li>
+							<li class="js-scroll fade-bottom">
+								<div class="icon">
+									<img src="../assets/img/icon-2.png" alt="">
+								</div>
+								<p>Free <span>Personalized</span><br> Telehealth Review</p>
+							</li>
+							<li class="js-scroll fade-bottom">
+								<div class="icon">
+									<img src="../assets/img/icon-3.png" alt="">
+								</div>
+								<p>Branded &amp; Generic<br> <span>Treatments</span> for Men</p>
+							</li>
+							<li class="js-scroll fade-bottom">
+								<div class="icon">
+									<img src="../assets/img/icon-4.png" alt="">
+								</div>
+								<p>Free <span>Delivery</span> Direct<br> From the Pharmacy</p>
+							</li>
+							<li class="js-scroll fade-bottom">
+								<div class="icon">
+									<img src="../assets/img/icon-5.png" alt="">
+								</div>
+								<p>Continued <span>Medical</span><br> Telehealth Support</p>
+							</li>
+						</ul>	
+					</div>
 				</div>
 			</div>
 		</div>
@@ -126,101 +203,102 @@
 	export default {
 		components: {
 			LottieAnimation
+		},
+		methods: {
+			animateDots() {
+				var stageWidth;
+			    var stageHeight;
+			    var dotPatternCanvas2 = document.getElementById("dot-pattern-2");
+			    var context2 = dotPatternCanvas2.getContext("2d");
+			    var objectList;
+			    var timeout;
+			    var smallDotSize = 1;
+			    var bigDotSize = 2;
+			    var prms = { fps: 6, objectDistance: 15, objectWidth: bigDotSize, objectRotationV: Math.PI * 0.09, objectRadius: 0 };
+			    var xAngle = 25;
+			    var yAngle = 65;
+			    //$(window).resize(reset);
+			    window.addEventListener('resize', reset);
+			    reset();
+			    function reset() {
+			        //stageWidth = $("#rexmd-dots-wrapper").width();
+			        //stageHeight = $("#rexmd-dots-wrapper").height();
+			        stageWidth  = document.querySelector("#rexmd-dots-wrapper").clientWidth;
+			        stageHeight = document.querySelector("#rexmd-dots-wrapper").clientHeight;
+			        //$("#rexmd-dots-wrapper canvas").attr("width", stageWidth);
+			        document.querySelector('#rexmd-dots-wrapper canvas').setAttribute("width", stageWidth);
+			        //$("#rexmd-dots-wrapper canvas").attr("height", stageHeight);
+			        document.querySelector('#rexmd-dots-wrapper canvas').setAttribute("height", stageHeight);
+			        objectList = [];
+			        var x = 4;
+			        var y = 4;
+			        while (x < stageWidth + prms.objectDistance * 0.5) {
+			            y = 4;
+			            while (y < stageHeight + prms.objectDistance * 0.5) {
+			                var xDistance = x - stageWidth * xAngle;
+			                var yDistance = y - stageHeight * yAngle;
+			                var distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
+			                var circleRotation = Math.PI * 0.005 * distance;
+			                objectList.push(new Circle(x, y, circleRotation));
+			                y += prms.objectDistance;
+			            }
+			            x += prms.objectDistance;
+			        }
+			        if (timeout) {
+			            clearTimeout(timeout);
+			        }
+			        timeout = setTimeout(onEnterFrame, 1000 / prms.fps);
+			    }
+			    function Circle(_x, _y, _rotation) {
+			        this.x = _x;
+			        this.y = _y;
+			        this.vx = 0;
+			        this.vy = 0;
+			        this.ax = 0;
+			        this.ay = 0;
+			        this.rotation = _rotation;
+			        this.cx = _x;
+			        this.cy = _y;
+			    }
+			    Circle.prototype.width = prms.objectWidth;
+			    Circle.prototype.rotationV = prms.objectRotationV;
+			    Circle.prototype.radius = prms.objectRadius;
+			    Circle.prototype.tick = function () {
+			        this.rotation += this.rotationV;
+			        this.x = this.radius * Math.cos(this.rotation) + this.cx;
+			        this.y = this.radius * Math.sin(this.rotation) + this.cy;
+			        this.width = (smallDotSize + Math.cos(this.rotation)) * Circle.prototype.width;
+			    };
+			    Circle.prototype.draw = function (_context) {
+			        _context.beginPath();
+			        _context.arc(this.x, this.y, this.width * 0.4, 0, Math.PI * 2, false);
+			        _context.fill();
+			        _context.closePath();
+			    };
+			    function onEnterFrame() {
+			        var len = objectList.length;
+			        var object;
+			        while (len > 0) {
+			            len -= 1;
+			            object = objectList[len];
+			            object.tick();
+			        }
+			        context2.clearRect(0, 0, stageWidth, stageHeight);
+			        context2.fillStyle = "#c0c4ce";
+			        len = objectList.length;
+			        while (len > 0) {
+			            len -= 1;
+			            object = objectList[len];
+			            object.draw(context2);
+			        }
+			        timeout = setTimeout(onEnterFrame, 1000 / prms.fps);
+			    }
+			}
+		},
+		mounted() {
+			this.animateDots();
 		}
 	}
-	function animateDots(){
-	    var stageWidth;
-	    var stageHeight;
-	    var dotPatternCanvas2 = document.getElementById("dot-pattern-2");
-	    var context2 = dotPatternCanvas2.getContext("2d");
-	    var objectList;
-	    var timeout;
-	    var smallDotSize = 1;
-	    var bigDotSize = 2;
-	    var prms = { fps: 6, objectDistance: 15, objectWidth: bigDotSize, objectRotationV: Math.PI * 0.09, objectRadius: 0 };
-	    var xAngle = 25;
-	    var yAngle = 65;
-	    //$(window).resize(reset);
-	    window.addEventListener('resize', reset);
-	    reset();
-	    function reset() {
-	        //stageWidth = $("#rexmd-dots-wrapper").width();
-	        //stageHeight = $("#rexmd-dots-wrapper").height();
-	        stageWidth  = document.querySelector("#rexmd-dots-wrapper").clientWidth;
-	        stageHeight = document.querySelector("#rexmd-dots-wrapper").clientHeight;
-	        //$("#rexmd-dots-wrapper canvas").attr("width", stageWidth);
-	        document.querySelector('#rexmd-dots-wrapper canvas').setAttribute("width", stageWidth);
-	        //$("#rexmd-dots-wrapper canvas").attr("height", stageHeight);
-	        document.querySelector('#rexmd-dots-wrapper canvas').setAttribute("height", stageHeight);
-	        objectList = [];
-	        var x = 4;
-	        var y = 4;
-	        while (x < stageWidth + prms.objectDistance * 0.5) {
-	            y = 4;
-	            while (y < stageHeight + prms.objectDistance * 0.5) {
-	                var xDistance = x - stageWidth * xAngle;
-	                var yDistance = y - stageHeight * yAngle;
-	                var distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
-	                var circleRotation = Math.PI * 0.005 * distance;
-	                objectList.push(new Circle(x, y, circleRotation));
-	                y += prms.objectDistance;
-	            }
-	            x += prms.objectDistance;
-	        }
-	        if (timeout) {
-	            clearTimeout(timeout);
-	        }
-	        timeout = setTimeout(onEnterFrame, 1000 / prms.fps);
-	    }
-	    function Circle(_x, _y, _rotation) {
-	        this.x = _x;
-	        this.y = _y;
-	        this.vx = 0;
-	        this.vy = 0;
-	        this.ax = 0;
-	        this.ay = 0;
-	        this.rotation = _rotation;
-	        this.cx = _x;
-	        this.cy = _y;
-	    }
-	    Circle.prototype.width = prms.objectWidth;
-	    Circle.prototype.rotationV = prms.objectRotationV;
-	    Circle.prototype.radius = prms.objectRadius;
-	    Circle.prototype.tick = function () {
-	        this.rotation += this.rotationV;
-	        this.x = this.radius * Math.cos(this.rotation) + this.cx;
-	        this.y = this.radius * Math.sin(this.rotation) + this.cy;
-	        this.width = (smallDotSize + Math.cos(this.rotation)) * Circle.prototype.width;
-	    };
-	    Circle.prototype.draw = function (_context) {
-	        _context.beginPath();
-	        _context.arc(this.x, this.y, this.width * 0.4, 0, Math.PI * 2, false);
-	        _context.fill();
-	        _context.closePath();
-	    };
-	    function onEnterFrame() {
-	        var len = objectList.length;
-	        var object;
-	        while (len > 0) {
-	            len -= 1;
-	            object = objectList[len];
-	            object.tick();
-	        }
-	        context2.clearRect(0, 0, stageWidth, stageHeight);
-	        context2.fillStyle = "#c0c4ce";
-	        len = objectList.length;
-	        while (len > 0) {
-	            len -= 1;
-	            object = objectList[len];
-	            object.draw(context2);
-	        }
-	        timeout = setTimeout(onEnterFrame, 1000 / prms.fps);
-	    }
-	};
-
-	window.addEventListener('load', function() {
-	 	animateDots();
-	});
 </script>
 
 <style>
@@ -240,17 +318,18 @@
 
 	.crown {
 		max-width: 70px;
+		max-height: 60px;
 	    position: absolute;
 	    bottom: 100%;
 	    left: 50%;
 	    transform: translateX(-50%);
-	    margin: 0 0 -15px !important;
+	    margin: 0 0 -20px !important;
 	}
 
 	.main-real .banner-dots {
 	    position: absolute;
-	    top: -50px;
-	    right: -50px;
+	    top: 5px;
+	    right: 5px;
 	    z-index: -2;
 	}
 
@@ -258,6 +337,7 @@
 		display: flex;
 		align-items: flex-end;
 		justify-content: space-between;
+		margin-bottom: 30px;
 	}
 	.real-head p {
 		font-size: 13px;
@@ -288,7 +368,6 @@
 		background: var(--blue);
 	}
 
-	.form-real {margin-top: 30px;}
 	.form-real .field {position: relative;}
 	.form-real .field input {
 		min-height: 57px;
@@ -296,18 +375,20 @@
 		padding: 0 80px 0 20px;
 		width: 100%;
 		font-size: 16px;
+		font-family: 'Campton', sans-serif;
+		font-weight: 300;
 		color: var(--blue);
 	}
 	.form-real .field input::placeholder {color: var(--blue);}
 	.form-real .field > div {
-		max-width: 60px;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
+		max-width: 100px;
+	    min-height: 100px;
+	    position: absolute;
+	    top: -21px;
+	    right: -22px;
 	}
 
-	.form-real p {
+	.form-real .wrap > p {
 		font-size: 13px;
 		color: #8b8b8b;
 		text-transform: uppercase;
@@ -316,6 +397,7 @@
 		margin-bottom: 20px;
 	}
 
+	.form-real ul.list {margin-top: 20px;}
 	.form-real ul li {
 		display: flex;
 		justify-content: space-between;
@@ -357,7 +439,7 @@
 	}
 	.total .price span {
 		font-size: 14px;
-		font-weight: normal;
+		font-weight: 300;
 		text-transform: uppercase;
 		margin-right: 15px;
 	}
@@ -408,59 +490,37 @@
 	  }
 	}
 
-	.foot-real .trust {
+	.foot-real .trust,
+	.form-real .wrap .trust {
 		margin: 40px auto 25px auto !important;
 		display: block;
 		max-width: 370px;
 	}
-	.foot-real ul {
+	.foot-real ul,
+	.form-real .wrap ul.show-991 {
 	    display: flex;
 	    justify-content: center;
 	    margin-bottom: 30px;
 	}
-	.foot-real ul li {
+	.foot-real ul li,
+	.form-real .wrap ul.show-991 li {
 	    display: flex;
 	    align-items: center;
 	}
-	.foot-real ul li + li {
+	.foot-real ul li + li,
+	.form-real .wrap ul.show-991 li + li {
 	    margin-left: 30px;
 	}
-	.foot-real ul li div {
+	.foot-real ul li div,
+	.form-real .wrap ul.show-991 li div {
 		max-width: 180px;
 	}
-	.foot-real ul li:last-child i {
-	    position: relative;
-	    top: -3px;
-	}
-	.foot-real ul li p {
+	.foot-real ul li p,
+	.form-real .wrap ul.show-991 li p {
 	    font: 500 10px/12px 'Gotham', sans-serif;
 	    color: #8a8d96;
 	    text-transform: uppercase;
 	    text-align: left;
-	}
-	.foot-real ul li i {
-	    margin-right: 5px;
-	}
-	.ic-rx {
-	    display: inline-block;
-	    vertical-align: middle;
-	    min-width: 32px;
-	    height: 35px;
-	    background: url(../assets/img/ic-rx.png) no-repeat;
-	}
-	.ic-hippa {
-	    display: inline-block;
-	    vertical-align: middle;
-	    min-width: 51px;
-	    height: 37px;
-	    background: url(../assets/img/ic-hipaa.png) no-repeat;
-	}
-	.ic-licensed {
-	    display: inline-block;
-	    vertical-align: middle;
-	    min-width: 44px;
-	    height: 44px;
-	    background: url(../assets/img/ic-licensed.png) no-repeat;
 	}
 
 	.product {
@@ -479,10 +539,6 @@
 	.product img {
 		display: block;
 		margin: 25px auto 10px auto;
-	}
-
-	@media (max-width: 1550px) {
-		.main-real {max-width: 580px;}
 	}
 </style>
 

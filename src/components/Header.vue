@@ -8,11 +8,11 @@
 	<div class="head-line">
 		<lottie-animation
 		    path="lottie/birca.json"
-		    :loop="true"
+		    :loop="false"
 		    :autoPlay="true"
 		    :speed="1"
 		/>
-		<p>Sample pack discount activated + online consultation & rushed shipping for free!</p>
+		<p>Sample pack discount activated + online<br hidden class="show-991"> consultation & rushed shipping for free!</p>
 	</div>
 </template>
 
@@ -22,7 +22,7 @@
 	export default {
 		components: {
 			LottieAnimation
-		}
+		}		
 	}
 </script>
 
@@ -42,14 +42,15 @@
 	.head-line {
 	    background: #cef1ec;
 	    text-align: center;
+	    font-weight: 500;
 	    color: var(--blue);
-	    padding: 5px 0;
+	    padding: 7px 0;
 	    display: flex;
 	    align-items: center;
 	    justify-content: center;
 	}
 	.head-line div {
-	    max-width: 28px;
+	    max-width: 15px;
 	    margin: 0 10px 0 !important;
 	    line-height: 0;
 	}

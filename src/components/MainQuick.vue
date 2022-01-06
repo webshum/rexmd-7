@@ -1,53 +1,64 @@
 <template>
 	<div class="main-quick box">
 		<div class="inner">
-			<h2>Quick. Simple.<br> <span>Safe. Convenient.</span></h2>
-			<p>No waiting rooms, no trips to the <br>doctor, no insurance or co-pays. </p>
-			<ul class="icons">
-				<li>
-					<div class="icon">
-						<img src="../assets/img/icon-1.png" alt="">
-					</div>
-					<p>The <span>Lowest Price</span><br> Per Pill, Guaranteed</p>
-				</li>
-				<li>
-					<div class="icon">
-						<img src="../assets/img/icon-2.png" alt="">
-					</div>
-					<p>Free <span>Personalized</span><br> Telehealth Review</p>
-				</li>
-				<li>
-					<div class="icon">
-						<img src="../assets/img/icon-3.png" alt="">
-					</div>
-					<p>Branded &amp; Generic<br> <span>Treatments</span> for Men</p>
-				</li>
-				<li>
-					<div class="icon">
-						<img src="../assets/img/icon-4.png" alt="">
-					</div>
-					<p>Free <span>Delivery</span> Direct<br> From the Pharmacy</p>
-				</li>
-				<li>
-					<div class="icon">
-						<img src="../assets/img/icon-5.png" alt="">
-					</div>
-					<p>Continued <span>Medical</span><br> Telehealth Support</p>
-				</li>
-			</ul>		
+			<div class="hide-991">
+				<h2 class="js-scroll fade-top">Quick. Simple.<br> <span>Safe. Convenient.</span></h2>
+				<p class="js-scroll fade-top">No waiting rooms, no trips to the <br>doctor, no insurance or co-pays. </p>
+				<ul class="icons">
+					<li class="js-scroll fade-bottom">
+						<div class="icon">
+							<img src="../assets/img/icon-1.png" alt="">
+						</div>
+						<p>The <span>Lowest Price</span><br> Per Pill, Guaranteed</p>
+					</li>
+					<li class="js-scroll fade-bottom">
+						<div class="icon">
+							<img src="../assets/img/icon-2.png" alt="">
+						</div>
+						<p>Free <span>Personalized</span><br> Telehealth Review</p>
+					</li>
+					<li class="js-scroll fade-bottom">
+						<div class="icon">
+							<img src="../assets/img/icon-3.png" alt="">
+						</div>
+						<p>Branded &amp; Generic<br> <span>Treatments</span> for Men</p>
+					</li>
+					<li class="js-scroll fade-bottom">
+						<div class="icon">
+							<img src="../assets/img/icon-4.png" alt="">
+						</div>
+						<p>Free <span>Delivery</span> Direct<br> From the Pharmacy</p>
+					</li>
+					<li class="js-scroll fade-bottom">
+						<div class="icon">
+							<img src="../assets/img/icon-5.png" alt="">
+						</div>
+						<p>Continued <span>Medical</span><br> Telehealth Support</p>
+					</li>
+				</ul>	
+			</div>
+				
 
 			<div class="foot">
-				<h4>INCLUDED WITH ALL PRESCRIPTIONS</h4>
-				<h3>More Than Just <span>ED Treatments</span></h3>
-				<p>Your prescription comes with free medical<br>
+				<h4 class="js-scroll fade-bottom">INCLUDED WITH ALL PRESCRIPTIONS</h4>
+				<h3 class="js-scroll fade-bottom">More Than Just <span>ED Treatments</span></h3>
+				<p class="js-scroll fade-bottom">Your prescription comes with free medical<br>
 				guidance. Message your Rex MD physician<br>
 				anytime without co-pays or waiting rooms.</p>
 				<img src="../assets/img/portal.png" alt="">
 				<div>
-					<p>Message your assigned physician through<br>
+					<p class="js-scroll fade-bottom">Message your assigned physician through<br>
 	                the REX MD Member Portal any time.</p>
-	                <p class="small">RexMD featured in</p>
-	                <img src="../assets/img/logos.png" alt="">
+	                <div class="hide-991">
+	                	<p class="small js-scroll fade-bottom">RexMD featured in</p>
+	               		<img src="../assets/img/logos.png" alt="" class="js-scroll fade-bottom">
+	                </div>	   
+	                <div hidden class="show-991">
+	                	<div class="group">
+							<button class="btn shadow-pulse">CONTINUE TO FINAL STEP</button>
+							<button class="btn back js-scroll fade-bottom">PREVIOUS STEP</button>
+						</div>
+	                </div>             
 				</div>				
 			</div>				
 		</div>
