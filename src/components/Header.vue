@@ -42,9 +42,9 @@
 	.head-line {
 	    background: #cef1ec;
 	    text-align: center;
-	    font-weight: 500;
+	    font-weight: 300;
 	    color: var(--blue);
-	    padding: 7px 0;
+	    padding: 10px 0;
 	    display: flex;
 	    align-items: center;
 	    justify-content: center;
@@ -53,5 +53,7 @@
 	    max-width: 15px;
 	    margin: 0 10px 0 !important;
 	    line-height: 0;
+	    position: relative;
+    	top: -1px;
 	}
 </style>

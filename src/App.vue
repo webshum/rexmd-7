@@ -719,6 +719,10 @@
 			text-align: center;
 			margin-top: 50px;
 		}
+		.wrap-timer .ic-timer {
+			max-width: 110px;
+			margin: 0 auto;
+		}
 		.wrap-timer .timer {
 			font-size: 34px;
 			line-height: 1.5;

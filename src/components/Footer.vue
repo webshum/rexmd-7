@@ -1,6 +1,13 @@
 <template>
 	<div hidden class="show-991 wrap-timer">
-		<img src="../assets/img/timer.png" alt="">
+		<lottie-animation
+		    path="lottie/timer.json"
+		    :loop="true"
+		    :autoPlay="true"
+		    :speed="1"
+		    class="ic-timer"
+		/>
+		
 		<div class="timer">
 			Bryant, your treatment is only<br>
             reserved for another <strong id="stopwatch-2">{{ timer }}</strong>
@@ -28,10 +35,11 @@
 
 <script>
 	import Popup from "@/components/Popup";
+	import LottieAnimation from "lottie-vuejs/src/LottieAnimation.vue";
 
 	export default {
 		components: {
-			Popup
+			Popup, LottieAnimation
 		},
 		data() {
 			return {
@@ -40,24 +48,26 @@
 		},
 		methods: {
 			addTimer() {
-				var spd = 100;
-		        var spdVal = 10;
-		        var cntDown = 0 * 60 * spdVal;
-		        setInterval(function () {
-		            var mn, sc, ms;
-		            cntDown++;
-		            if(cntDown < 0) {
-		                return false;
-		            }
-		            mn = Math.floor((cntDown / spdVal) / 60 );
-		            mn = (mn < 10 ? '0' + mn : mn);
-		            sc = Math.floor((cntDown / spdVal) % 60);
-		            sc = (sc < 10 ? '0' + sc : sc);
-		            ms = Math.floor(cntDown % spdVal);
-		            ms = (ms < 10 ? '0' + ms : ms);
-		            var result = mn + ':' + sc + ':' + ms;
-		            document.getElementById('stopwatch-2').innerHTML = result;
-		        }, spd);
+				let result = '00:00:00';
+
+				setInterval(function() {
+					let deadline = new Date(2022, 12, 0, 0);
+					let date = new Date();
+
+					if (deadline != date) {
+						let hours = date.getHours();
+						let minutes = date.getMinutes();
+						let seconds = date.getSeconds();
+
+						hours = (hours < 10) ? '0' + hours : hours;
+						minutes = (minutes < 10) ? '0' + minutes : minutes;
+						seconds = (seconds < 10) ? '0' + seconds : seconds;
+
+						result = hours + ':' + minutes + ':' + seconds;
+					}
+
+					document.querySelector('#stopwatch-2').innerHTML = result;
+				}, 1000);
 			}
 		},
 		mounted() {

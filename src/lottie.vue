@@ -24,7 +24,6 @@
       }
     },
     mounted () {
-      console.log('lottie');
       this.anim = lottie.loadAnimation({
           container: this.$refs.lavContainer,
           renderer: 'svg',

@@ -3,14 +3,10 @@
 		<lottie-animation
 		    path="lottie/crown-2.json"
 		    :loop="false"
-		    :autoPlay="true"
+		    :autoPlay="false"
 		    :speed="1"
 		    class="crown"
 		/>
-
-		<div class="banner-dots" id="rexmd-dots-wrapper" style="width:190px;height:190px;">
-			<canvas class="dot-pattern-2" id="dot-pattern-2" width="190px" height="190px"></canvas>
-		</div>
 
 		<div class="inner">
 			<form action="#" class="form-real">
@@ -33,6 +29,8 @@
 						    :loop="true"
 						    :autoPlay="true"
 						    :speed="1"
+						    @AnimControl="handleAnimation"
+						    class="an-icon"
 						/>
 					</div>
 				</div>
@@ -203,100 +201,6 @@
 	export default {
 		components: {
 			LottieAnimation
-		},
-		methods: {
-			animateDots() {
-				var stageWidth;
-			    var stageHeight;
-			    var dotPatternCanvas2 = document.getElementById("dot-pattern-2");
-			    var context2 = dotPatternCanvas2.getContext("2d");
-			    var objectList;
-			    var timeout;
-			    var smallDotSize = 1;
-			    var bigDotSize = 2;
-			    var prms = { fps: 6, objectDistance: 15, objectWidth: bigDotSize, objectRotationV: Math.PI * 0.09, objectRadius: 0 };
-			    var xAngle = 25;
-			    var yAngle = 65;
-			    //$(window).resize(reset);
-			    window.addEventListener('resize', reset);
-			    reset();
-			    function reset() {
-			        //stageWidth = $("#rexmd-dots-wrapper").width();
-			        //stageHeight = $("#rexmd-dots-wrapper").height();
-			        stageWidth  = document.querySelector("#rexmd-dots-wrapper").clientWidth;
-			        stageHeight = document.querySelector("#rexmd-dots-wrapper").clientHeight;
-			        //$("#rexmd-dots-wrapper canvas").attr("width", stageWidth);
-			        document.querySelector('#rexmd-dots-wrapper canvas').setAttribute("width", stageWidth);
-			        //$("#rexmd-dots-wrapper canvas").attr("height", stageHeight);
-			        document.querySelector('#rexmd-dots-wrapper canvas').setAttribute("height", stageHeight);
-			        objectList = [];
-			        var x = 4;
-			        var y = 4;
-			        while (x < stageWidth + prms.objectDistance * 0.5) {
-			            y = 4;
-			            while (y < stageHeight + prms.objectDistance * 0.5) {
-			                var xDistance = x - stageWidth * xAngle;
-			                var yDistance = y - stageHeight * yAngle;
-			                var distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
-			                var circleRotation = Math.PI * 0.005 * distance;
-			                objectList.push(new Circle(x, y, circleRotation));
-			                y += prms.objectDistance;
-			            }
-			            x += prms.objectDistance;
-			        }
-			        if (timeout) {
-			            clearTimeout(timeout);
-			        }
-			        timeout = setTimeout(onEnterFrame, 1000 / prms.fps);
-			    }
-			    function Circle(_x, _y, _rotation) {
-			        this.x = _x;
-			        this.y = _y;
-			        this.vx = 0;
-			        this.vy = 0;
-			        this.ax = 0;
-			        this.ay = 0;
-			        this.rotation = _rotation;
-			        this.cx = _x;
-			        this.cy = _y;
-			    }
-			    Circle.prototype.width = prms.objectWidth;
-			    Circle.prototype.rotationV = prms.objectRotationV;
-			    Circle.prototype.radius = prms.objectRadius;
-			    Circle.prototype.tick = function () {
-			        this.rotation += this.rotationV;
-			        this.x = this.radius * Math.cos(this.rotation) + this.cx;
-			        this.y = this.radius * Math.sin(this.rotation) + this.cy;
-			        this.width = (smallDotSize + Math.cos(this.rotation)) * Circle.prototype.width;
-			    };
-			    Circle.prototype.draw = function (_context) {
-			        _context.beginPath();
-			        _context.arc(this.x, this.y, this.width * 0.4, 0, Math.PI * 2, false);
-			        _context.fill();
-			        _context.closePath();
-			    };
-			    function onEnterFrame() {
-			        var len = objectList.length;
-			        var object;
-			        while (len > 0) {
-			            len -= 1;
-			            object = objectList[len];
-			            object.tick();
-			        }
-			        context2.clearRect(0, 0, stageWidth, stageHeight);
-			        context2.fillStyle = "#c0c4ce";
-			        len = objectList.length;
-			        while (len > 0) {
-			            len -= 1;
-			            object = objectList[len];
-			            object.draw(context2);
-			        }
-			        timeout = setTimeout(onEnterFrame, 1000 / prms.fps);
-			    }
-			}
-		},
-		mounted() {
-			this.animateDots();
 		}
 	}
 </script>
@@ -326,13 +230,6 @@
 	    margin: 0 0 -20px !important;
 	}
 
-	.main-real .banner-dots {
-	    position: absolute;
-	    top: 5px;
-	    right: 5px;
-	    z-index: -2;
-	}
-
 	.real-head {
 		display: flex;
 		align-items: flex-end;
@@ -348,6 +245,7 @@
 	.real-head h3 {
 		font-size: 30px;
 		margin-top: 10px;
+		letter-spacing: 1px;
 	}
 	.real-head > div > div {
 		font-size: 18px;
@@ -374,18 +272,18 @@
 		border: 1px solid #4d5a69;
 		padding: 0 80px 0 20px;
 		width: 100%;
-		font-size: 16px;
+		font-size: 17px;
 		font-family: 'Campton', sans-serif;
 		font-weight: 300;
 		color: var(--blue);
 	}
 	.form-real .field input::placeholder {color: var(--blue);}
 	.form-real .field > div {
-		max-width: 100px;
-	    min-height: 100px;
+		max-width: 103px;
+	    min-height: 103px;
 	    position: absolute;
-	    top: -21px;
-	    right: -22px;
+	    top: -22px;
+	    right: -23px;
 	}
 
 	.form-real .wrap > p {

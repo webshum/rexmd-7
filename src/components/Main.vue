@@ -2,10 +2,22 @@
 	<main class="center">
 		<div class="main-timer">
 			<h2 class="js-scroll fade-bottom">
-				<span>Congrats!</span> You’ve scored the lowest price
+				<span>
+					<lottie-animation
+					    path="lottie/bg.json"
+					    :loop="true"
+					    :autoPlay="true"
+					    :speed="1"
+					    class="bt-timer"
+					/>
+
+					Congrats!
+				</span> 
+
+				You’ve scored the lowest price
 				<lottie-animation
 				    path="lottie/lock.json"
-				    :loop="false"
+				    :loop="true"
 				    :autoPlay="true"
 				    :speed="1"
 				/>
@@ -33,29 +45,31 @@
 		},
 		data() {
 			return {
-				timer: '00:00:00'
+				timer: '23:00:00'
 			}
 		},
 		methods: {
 			addTimer() {
-				var spd = 100;
-		        var spdVal = 10;
-		        var cntDown = 0 * 60 * spdVal;
-		        setInterval(function () {
-		            var mn, sc, ms;
-		            cntDown++;
-		            if(cntDown < 0) {
-		                return false;
-		            }
-		            mn = Math.floor((cntDown / spdVal) / 60 );
-		            mn = (mn < 10 ? '0' + mn : mn);
-		            sc = Math.floor((cntDown / spdVal) % 60);
-		            sc = (sc < 10 ? '0' + sc : sc);
-		            ms = Math.floor(cntDown % spdVal);
-		            ms = (ms < 10 ? '0' + ms : ms);
-		            var result = mn + ':' + sc + ':' + ms;
-		            document.getElementById('stopwatch').innerHTML = result;
-		        }, spd);
+				let result = '00:00:00';
+
+				setInterval(function() {
+					let deadline = new Date(2022, 12, 0, 0);
+					let date = new Date();
+
+					if (deadline != date) {
+						let hours = date.getHours();
+						let minutes = date.getMinutes();
+						let seconds = date.getSeconds();
+
+						hours = (hours < 10) ? '0' + hours : hours;
+						minutes = (minutes < 10) ? '0' + minutes : minutes;
+						seconds = (seconds < 10) ? '0' + seconds : seconds;
+
+						result = hours + ':' + minutes + ':' + seconds;
+					}
+
+					document.querySelector('#stopwatch').innerHTML = result;
+				}, 1000);
 			}
 		},
 		mounted() {
@@ -72,12 +86,24 @@
 	.main-timer h2 {
 		font-size: 27px;
 	}
-	.main-timer h2 span {color: var(--red)}
+	.main-timer h2 span {
+		color: var(--red);
+		position: relative;
+	}
 	.main-timer h2 div {
 		display: inline-block;
 		vertical-align: middle;
 		max-width: 35px;
 		margin: 0 0 0 0 !important;
+	}
+	.main-timer .bt-timer {
+		display: inline-block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		min-width: 150px;
+		min-height: 150px;
 	}
 	.main-timer .timer {font-size: 20px;}
 	#stopwatch {
