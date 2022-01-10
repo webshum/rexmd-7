@@ -146,6 +146,8 @@
 
 	ul {list-style: none;}
 
+	#app {padding-top: 43px;}
+
 	.center {
 		width: 100%;
 	    max-width: 1500px;
@@ -467,6 +469,7 @@
 		    line-height: 37px;
 		}
 
+		#app {padding-top: 92px;}
 		#app .flex {
 			flex-direction: column;
 			margin-top: 60px;

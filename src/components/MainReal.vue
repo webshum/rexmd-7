@@ -3,7 +3,7 @@
 		<lottie-animation
 		    path="lottie/crown-2.json"
 		    :loop="false"
-		    :autoPlay="false"
+		    :autoPlay="true"
 		    :speed="1"
 		    class="crown"
 		/>
@@ -29,8 +29,6 @@
 						    :loop="true"
 						    :autoPlay="true"
 						    :speed="1"
-						    @AnimControl="handleAnimation"
-						    class="an-icon"
 						/>
 					</div>
 				</div>
@@ -75,35 +73,42 @@
 
 					<lottie-animation
 					    path="lottie/trust.json"
-					    :loop="true"
-					    :autoPlay="true"
+					    :loop="false"
+					    :autoPlay="false"
 					    :speed="1"
-					    class="trust js-scroll fade-bottom show-991 d-none js-lottie"
+					    class="trust an-icon js-scroll fade-bottom show-991 d-none js-lottie"
+						@AnimControl="animated"
 					/>
 
 					<ul class="show-991 d-none">
 						<li class="js-scroll fade-bottom">
 							<lottie-animation
 							    path="lottie/pharmacy.json"
-							    :loop="true"
-							    :autoPlay="true"
+							    :loop="false"
+							    :autoPlay="false"
 							    :speed="1"
+							    class="an-icon"
+						    	@AnimControl="animated"
 							/>
 						</li>
 						<li class="js-scroll fade-bottom">
 							<lottie-animation
 							    path="lottie/hippa.json"
-							    :loop="true"
-							    :autoPlay="true"
+							    :loop="false"
+							    :autoPlay="false"
 							    :speed="1"
+							    class="an-icon"
+						    	@AnimControl="animated"
 							/>
 						</li>
 						<li class="js-scroll fade-bottom">
 							<lottie-animation
 							    path="lottie/physicians.json"
-							    :loop="true"
-							    :autoPlay="true"
+							    :loop="false"
+							    :autoPlay="false"
 							    :speed="1"
+							    class="an-icon"
+						    	@AnimControl="animated"
 							/>
 						</li>
 					</ul>
@@ -113,35 +118,42 @@
 			<div class="foot-real">
 				<lottie-animation
 				    path="lottie/trust.json"
-				    :loop="true"
-				    :autoPlay="true"
+				    :loop="false"
+				    :autoPlay="false"
 				    :speed="1"
-				    class="trust js-scroll fade-bottom hide-991"
+				    class="trust an-icon js-scroll fade-bottom hide-991"
+				    @AnimControl="animated"
 				/>
 
 				<ul class="hide-991">
 					<li class="js-scroll fade-bottom">
 						<lottie-animation
 						    path="lottie/pharmacy.json"
-						    :loop="true"
-						    :autoPlay="true"
+						    :loop="false"
+						    :autoPlay="false"
 						    :speed="1"
+						    class="an-icon"
+						    @AnimControl="animated"
 						/>
 					</li>
 					<li class="js-scroll fade-bottom">
 						<lottie-animation
 						    path="lottie/hippa.json"
-						    :loop="true"
-						    :autoPlay="true"
+						    :loop="false"
+						    :autoPlay="false"
 						    :speed="1"
+						    class="an-icon"
+						    @AnimControl="animated"
 						/>
 					</li>
 					<li class="js-scroll fade-bottom">
 						<lottie-animation
 						    path="lottie/physicians.json"
-						    :loop="true"
-						    :autoPlay="true"
+						    :loop="false"
+						    :autoPlay="false"
 						    :speed="1"
+						    class="an-icon"
+						    @AnimControl="animated"
 						/>
 					</li>
 				</ul>
@@ -201,6 +213,31 @@
 	export default {
 		components: {
 			LottieAnimation
+		},
+		methods: {
+			animated(anim) {
+				let icons = document.querySelectorAll('.an-icon');
+			    let flag = true;
+
+			    document.addEventListener('scroll', scrolling);
+			    document.addEventListener('DOMContentLoaded', scrolling);
+
+			    function scrolling() {
+			        icons.forEach(icon => {
+			            if (isFullyVisible(icon)) {
+			                anim.play();              
+			            }
+			        }); 
+			    }
+
+			    function isFullyVisible(el) {
+			        var elementBoundary = el.getBoundingClientRect();			     
+			        var top = elementBoundary.top;
+			        var bottom = elementBoundary.bottom;
+			     
+			        return ((top >= 0) && (bottom <= window.innerHeight));
+			    }				
+			}
 		}
 	}
 </script>

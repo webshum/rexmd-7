@@ -2,10 +2,11 @@
 	<div hidden class="show-991 wrap-timer">
 		<lottie-animation
 		    path="lottie/timer.json"
-		    :loop="true"
-		    :autoPlay="true"
+		    :loop="false"
+		    :autoPlay="false"
 		    :speed="1"
 		    class="ic-timer"
+			@AnimControl="animated"
 		/>
 		
 		<div class="timer">
@@ -48,26 +49,47 @@
 		},
 		methods: {
 			addTimer() {
-				let result = '00:00:00';
+				const today = new Date()
+				const tomorrow = new Date(today)
+				tomorrow.setDate(tomorrow.getDate() + 1);
 
-				setInterval(function() {
-					let deadline = new Date(2022, 12, 0, 0);
-					let date = new Date();
+				var x = setInterval(function() {
+					var now = new Date().getTime();				    
+					var distance = tomorrow - now;
+					    
+					var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+					var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-					if (deadline != date) {
-						let hours = date.getHours();
-						let minutes = date.getMinutes();
-						let seconds = date.getSeconds();
+					hours = ("00" + hours).slice(-2);
+					minutes = ("00" + minutes).slice(-2);
+					seconds = ("00" + seconds).slice(-2);
 
-						hours = (hours < 10) ? '0' + hours : hours;
-						minutes = (minutes < 10) ? '0' + minutes : minutes;
-						seconds = (seconds < 10) ? '0' + seconds : seconds;
-
-						result = hours + ':' + minutes + ':' + seconds;
-					}
-
-					document.querySelector('#stopwatch-2').innerHTML = result;
+					document.getElementById("stopwatch-2").innerHTML = hours + ":" + minutes + ":" + seconds;			    
 				}, 1000);
+			},
+			animated(anim) {
+				let icons = document.querySelectorAll('.an-icon');
+			    let flag = true;
+
+			    document.addEventListener('scroll', scrolling);
+			    document.addEventListener('DOMContentLoaded', scrolling);
+
+			    function scrolling() {
+			        icons.forEach(icon => {
+			            if (isFullyVisible(icon)) {
+			                anim.play();              
+			            }
+			        }); 
+			    }
+
+			    function isFullyVisible(el) {
+			        var elementBoundary = el.getBoundingClientRect();			     
+			        var top = elementBoundary.top;
+			        var bottom = elementBoundary.bottom;
+			     
+			        return ((top >= 0) && (bottom <= window.innerHeight));
+			    }				
 			}
 		},
 		mounted() {

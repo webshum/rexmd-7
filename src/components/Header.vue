@@ -22,7 +22,7 @@
 	export default {
 		components: {
 			LottieAnimation
-		}		
+		}
 	}
 </script>
 
@@ -42,13 +42,19 @@
 	.head-line {
 	    background: #cef1ec;
 	    text-align: center;
-	    font-weight: 300;
+	    font-weight: 500;
 	    color: var(--blue);
 	    padding: 10px 0;
 	    display: flex;
 	    align-items: center;
 	    justify-content: center;
+	    position: fixed;
+	    top: 0;
+	    right: 0;
+	    left: 0;
+	    z-index: 999;
 	}
+
 	.head-line div {
 	    max-width: 15px;
 	    margin: 0 10px 0 !important;
