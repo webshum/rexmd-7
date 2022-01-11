@@ -22,7 +22,7 @@
 				    :speed="1"
 				/>
 			</h2>
-			<div class="timer js-scroll fade-bottom">Bryant, your treatment is reserved for <span id="stopwatch">{{ timer }}</span></div>
+			<div class="timer js-scroll fade-bottom">Bryant, your treatment is reserved for <span id="stopwatch"></span></div>
 		</div>
 
 		<div class="flex">
@@ -45,7 +45,7 @@
 		},
 		data() {
 			return {
-				timer: '23:00:00'
+				timer: '00:00:00'
 			}
 		},
 		methods: {

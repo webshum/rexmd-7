@@ -696,6 +696,7 @@
 			margin-bottom: 0;
 			border-radius: 15px 15px 0 0;
 			overflow: hidden;
+			z-index: 9999;
 		}
 		.price-video .iframe.play {display: block;}
 		.main-price .inner {

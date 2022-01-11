@@ -11,7 +11,7 @@
 		
 		<div class="timer">
 			Bryant, your treatment is only<br>
-            reserved for another <strong id="stopwatch-2">{{ timer }}</strong>
+            reserved for another <strong id="stopwatch-2"></strong>
 		</div>
 		<div class="group">
 			<button class="btn shadow-pulse">CONTINUE TO FINAL STEP</button>

@@ -7,6 +7,9 @@
 		<div class="price-video">
 			<video src="https://res.cloudinary.com/conversion-labs-inc/video/upload/v1633637909/RexMD/videos/2830436526_zhz5ng.mp4" poster="img/king-video.png" class="video"></video>
 			<div class="inner">
+				<div class="btn-stop" @click="stopVideo">
+					<svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg>
+				</div>
 				<a href="#" class="btn-video btn-popup pulse-transform hide-991" data-popup="popup-video"></a>
 				<a href="#" class="btn-video pulse-transform show-991 d-none" @click="playVideo"></a>
 				<div class="btn-pause" @click="pauseVideo">
@@ -525,6 +528,15 @@
                 video.pause();	
                 overlay.classList.remove('active');
                 e.target.closest('.price-video').classList.remove('play');
+			},
+			stopVideo(e) {
+				e.preventDefault();
+
+				const video = document.querySelector('.video');
+				const overlay = document.querySelector('.popup-overlay');
+                video.pause();	
+                overlay.classList.remove('active');
+                e.target.closest('.price-video').classList.remove('play');
 			}
 		},
 		mounted() {
@@ -576,7 +588,6 @@
 	    margin-bottom: 20px;
 	    border-radius: 0 15px 0 0;
 	    position: relative;
-	    z-index: 9999;
 	}
 	.price-video .btn-video {
 	    display: block;
@@ -633,6 +644,29 @@
 		margin-right: 10px;
 	}
 	.price-video.play:hover .btn-pause {display: flex;}
+
+	.btn-stop {
+	    position: absolute;
+	    top: 15px;
+	    right: 15px;
+	    width: 35px;
+	    height: 35px;
+	    cursor: pointer;
+	    border: 1px solid #fff;
+	    border-radius: 50%;
+	    transition: all 0.3s;
+	    z-index: 999;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    display: none;
+	}
+	.btn-stop svg {
+	    fill: #fff;
+	    width: 25px;
+	    height: 25px;
+	}
+	.price-video.play .btn-stop {display: flex;}
 
 	.price-video .video {
 		position: absolute;
