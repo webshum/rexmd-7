@@ -512,16 +512,18 @@
 				e.preventDefault();
 
 				const video = document.querySelector('.video');
+				const overlay = document.querySelector('.popup-overlay');
                 video.play();	
-
+                overlay.classList.add('active');
                 e.target.closest('.price-video').classList.add('play');
 			},
 			pauseVideo(e) {
 				e.preventDefault();
 
 				const video = document.querySelector('.video');
+				const overlay = document.querySelector('.popup-overlay');
                 video.pause();	
-
+                overlay.classList.remove('active');
                 e.target.closest('.price-video').classList.remove('play');
 			}
 		},
@@ -574,6 +576,7 @@
 	    margin-bottom: 20px;
 	    border-radius: 0 15px 0 0;
 	    position: relative;
+	    z-index: 9999;
 	}
 	.price-video .btn-video {
 	    display: block;
@@ -618,6 +621,8 @@
 	    display: none;
 	    align-items: center;
     	justify-content: center;
+    	opacity: 0;
+    	transition: all 0.3s;
 	}
 	.btn-pause span {
 		width: 5px;
@@ -627,7 +632,7 @@
 	.btn-pause span:first-child {
 		margin-right: 10px;
 	}
-	.price-video.play .btn-pause {display: flex;}
+	.price-video.play:hover .btn-pause {display: flex;}
 
 	.price-video .video {
 		position: absolute;
