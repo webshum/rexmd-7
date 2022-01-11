@@ -45,11 +45,15 @@
 							<div class="price f-500">FREE</div>
 						</li>
 						<li class="js-scroll fade-bottom">
+							<div class="title">Rex MD Doctor Prescription</div>
+							<div class="price f-500">FREE</div>
+						</li>
+						<li class="js-scroll fade-bottom">
 							<div class="title">ED Treatment Total</div>
 							<div class="price f-500">$120.00</div>
 						</li>
 						<li class="c-red f-500 js-scroll fade-bottom">
-							<div class="title">XX% Instant Savings</div>
+							<div class="title">14% Instant Savings</div>
 							<div class="price c-red f-500">-$18.00</div>
 						</li>
 						<li class="js-scroll fade-bottom">

@@ -43,20 +43,19 @@
 	    background: #cef1ec;
 	    text-align: center;
 	    font-weight: 500;
+	    font-size: 18px;
 	    color: var(--blue);
 	    padding: 10px 0;
 	    display: flex;
 	    align-items: center;
 	    justify-content: center;
-	    position: fixed;
+	    position: sticky;
 	    top: 0;
-	    right: 0;
-	    left: 0;
 	    z-index: 999;
 	}
 
 	.head-line div {
-	    max-width: 15px;
+	    max-width: 20px;
 	    margin: 0 10px 0 !important;
 	    line-height: 0;
 	    position: relative;

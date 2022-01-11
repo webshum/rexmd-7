@@ -58,7 +58,7 @@
 					var now = new Date().getTime();				    
 					var distance = tomorrow - now;
 					    
-					var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+					var hours = Math.floor((distance % (1000 * 60 * 60 * 8)) / (1000 * 60 * 60));
 					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 					var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
@@ -91,7 +91,7 @@
 	.main-timer h2 div {
 		display: inline-block;
 		vertical-align: middle;
-		max-width: 35px;
+		max-width: 28px;
 		margin: 0 0 0 0 !important;
 	}
 	.main-timer .bg-timer {

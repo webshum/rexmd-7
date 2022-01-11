@@ -12,66 +12,67 @@
 </template>
 
 <script>
-	/* 
-	POPUP ------------------------------------ */
-	function popup() {
-	    let btn = document.querySelectorAll('.btn-popup');
-	    let overlay = document.querySelector('.popup-overlay');
-	    let popup = null;
-	    let close = null;
-	    let _this = this;
-	    let player = null;
+	export default {
+		methods: {
+			popup() {
+				let btn = document.querySelectorAll('.btn-popup');
+			    let overlay = document.querySelector('.popup-overlay');
+			    let popup = null;
+			    let close = null;
+			    let _this = this;
+			    let player = null;
 
-	    for (var i = 0; i < btn.length; i++) {
-	        btn[i].addEventListener('click', function(e) {
-	            e.preventDefault();
+			    for (var i = 0; i < btn.length; i++) {
+			        btn[i].addEventListener('click', function(e) {
+			            e.preventDefault();
 
-	            popup = document.querySelector('.' + this.getAttribute('data-popup'));
-	            close = popup.querySelector('.popup-close');
+			            popup = document.querySelector('.' + this.getAttribute('data-popup'));
+			            close = popup.querySelector('.popup-close');
 
-	            if (this.getAttribute('data-popup') == 'popup-video') {
-	                const iframe = popup.querySelector('iframe');
-	                player = new Vimeo.Player(iframe);
-	                player.play();
-	            }  
+			            if (this.getAttribute('data-popup') == 'popup-video') {
+			                const iframe = popup.querySelector('iframe');
+			                player = new Vimeo.Player(iframe);
+			                player.play();
+			            }  
 
-	            if (this.getAttribute('data-popup') == 'popup-video-2') {
-	                const iframe = popup.querySelector('iframe');
-	                player = new Vimeo.Player(iframe);
-	                player.play();
-	            }                  
+			            if (this.getAttribute('data-popup') == 'popup-video-2') {
+			                const iframe = popup.querySelector('iframe');
+			                player = new Vimeo.Player(iframe);
+			                player.play();
+			            }                  
 
-	            let top  = window.pageYOffset || document.documentElement.scrollTop,
-	            left = window.pageXOffset || document.documentElement.scrollLeft;
-	            
-	            overlay.classList.add('active');
-	            popup.classList.add('active');
-	            popup.style.top = (top + 100) + 'px';
+			            let top  = window.pageYOffset || document.documentElement.scrollTop,
+			            left = window.pageXOffset || document.documentElement.scrollLeft;
+			            
+			            overlay.classList.add('active');
+			            popup.classList.add('active');
+			            popup.style.top = (top + 100) + 'px';
 
-	            close.addEventListener('click', closePopup);
-	            overlay.addEventListener('click', closePopup);
-	        });
-	    }
+			            close.addEventListener('click', closePopup);
+			            overlay.addEventListener('click', closePopup);
+			        });
+			    }
 
-	    function closePopup(e) {
-	        e.preventDefault();
+			    function closePopup(e) {
+			        e.preventDefault();
 
-	        overlay.classList.remove('active');
-	        popup.classList.remove('active');
+			        overlay.classList.remove('active');
+			        popup.classList.remove('active');
 
-	        if (popup.classList.contains('popup-video')) {
-	            player.pause();
-	        }    
+			        if (popup.classList.contains('popup-video')) {
+			            player.pause();
+			        }    
 
-	        if (popup.classList.contains('popup-video-2')) {
-	            player.pause();
-	        }          
-	    }
-	}	
-
-	window.addEventListener('load', function() {
-		popup();
-	});
+			        if (popup.classList.contains('popup-video-2')) {
+			            player.pause();
+			        }          
+			    }
+			}
+		},
+		mounted() {
+			this.popup();
+		}
+	}
 </script>
 
 <style scoped>
@@ -136,6 +137,10 @@
 	    top: 50%;
 	    left: 50%;
 	    transform: translate(-50%, -50%);
+	}
+	.popup-close:hover {
+		background: #e9b77f;
+		border-color: #e9b77f;
 	}
 
 	.popup iframe {

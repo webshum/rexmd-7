@@ -146,8 +146,6 @@
 
 	ul {list-style: none;}
 
-	#app {padding-top: 43px;}
-
 	.center {
 		width: 100%;
 	    max-width: 1500px;
@@ -469,7 +467,6 @@
 		    line-height: 37px;
 		}
 
-		#app {padding-top: 92px;}
 		#app .flex {
 			flex-direction: column;
 			margin-top: 60px;
@@ -488,7 +485,12 @@
 			height: 75px;
 			font-size: 20px;
 		}
-		.btn:after {top: 0;}
+		.btn:after,
+		.btn.back:after {
+			top: 3px;
+		    background-size: 6px;
+		    width: 6px;
+		}
 
 		.box h2 {
 		    font-size: 53px;
@@ -498,7 +500,7 @@
 		/* HEADER */
 		#app .head-line {
 			text-align: left !important;
-			justify-content: flex-start !important;
+			justify-content: center !important;
 			padding-left: 20px;
 			padding-right: 20px;
 			line-height: 1.4;
@@ -687,10 +689,15 @@
 			background: #fff;
 			box-shadow: 0 0 76px rgb(0 0 0 / 10%);
 		}
+		.main-price .banner-dots {display: none;}
 		.price-video {
 			min-height: 350px;
+			max-width: inherit;
 			margin-bottom: 0;
+			border-radius: 15px 15px 0 0;
+			overflow: hidden;
 		}
+		.price-video .iframe.play {display: block;}
 		.main-price .inner {
 			padding: 30px;
 		}
@@ -980,6 +987,9 @@
 		    line-height: 38px;
 		}
 		.main-price .foot {font-size: 13px;}
+		.price-video {
+		    min-height: 200px;
+		}
 	}
 
 	@media (max-width: 375px) {

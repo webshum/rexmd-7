@@ -5,8 +5,10 @@
 		</div>
 
 		<div class="price-video">
+			<iframe src="https://player.vimeo.com/video/604162360?h=117e32a015" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen class="iframe" hidden></iframe>
 			<div class="inner">
-				<a href="#" class="btn-video btn-popup pulse-transform" data-popup="popup-video"></a>
+				<a href="#" class="btn-video btn-popup pulse-transform hide-991" data-popup="popup-video"></a>
+				<a href="#" class="btn-video pulse-transform show-991 d-none" @click="playVideo"></a>
 			</div>
 		</div>
 
@@ -501,10 +503,22 @@
 
 			        init();
 			    }
+			},
+			playVideo(e) {
+				e.preventDefault();
+
+				const iframe = document.querySelector('.iframe');
+                const player = new Vimeo.Player(iframe);
+                iframe.removeAttribute('hidden');
+                player.play();	
+
+                e.target.classList.add('play');
+                iframe.classList.add('play');
 			}
 		},
 		mounted() {
 			this.animateDots();
+
 			this.slider({
 			    elem: '.slider-reviews',
 			    slidesToShow: 1,
@@ -542,13 +556,15 @@
 
 	.price-video {
 	    width: 100%;
-	    min-height: 200px;
+	    max-width: 420px;
+    	min-height: 232px;
 	    background: url(../assets/img/price-video.jpg) no-repeat;
 	    background-size: cover;
 	    display: flex;
 	    justify-content: flex-end;
 	    margin-bottom: 20px;
 	    border-radius: 0 15px 0 0;
+	    position: relative;
 	}
 	.price-video .inner {
 	    position: relative;
@@ -572,6 +588,20 @@
 	}
 	.price-video .btn-video:hover {
 	    border-color: var(--red);
+	}
+	.price-video .btn-video.play {
+		display: none !important;
+	}
+
+	.price-video .iframe {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 3;
+		transform: translate(-50%, -50%);
+		width: 100vw;
+ 		height: calc(100vw/1.77);
+ 		display: none;
 	}
 
 	.main-price h2 {
