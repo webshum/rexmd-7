@@ -274,22 +274,22 @@
 	    opacity: 1;
 	}
 	.scrolled.fade {
-	    animation: fade 0.6s ease-in-out both;
+	    animation: fade 0.3s ease-in-out both;
 	}
 	.scrolled.fade-bottom {
-	    animation: fade-bottom 0.6s ease-in-out both;
+	    animation: fade-bottom 0.3s ease-in-out both;
 	}
 	.scrolled.fade-top {
-	    animation: fade-top 0.6s ease-in-out both;
+	    animation: fade-top 0.3s ease-in-out both;
 	}
 	.scrolled.fade-left {
-	    animation: fade-left 0.6s ease-in-out both;
+	    animation: fade-left 0.3s ease-in-out both;
 	}
 	.scrolled.fade-right {
-	    animation: fade-right 0.6s ease-in-out both;
+	    animation: fade-right 0.3s ease-in-out both;
 	}
 	.scrolled.fade-scale {
-	    animation: fade-scale 0.6s ease-in-out both;
+	    animation: fade-scale 0.3s ease-in-out both;
 	}
 
 	@keyframes fade {
