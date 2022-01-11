@@ -1,8 +1,8 @@
 <template>
-	<div hidden class="show-991 wrap-timer">
+	<div class="show-991 wrap-timer">
 		<lottie-animation
 		    path="lottie/timer.json"
-		    :loop="false"
+		    :loop="true"
 		    :autoPlay="false"
 		    :speed="1"
 		    class="ic-timer"
@@ -13,18 +13,21 @@
 			Bryant, your treatment is only<br>
             reserved for another <strong id="stopwatch-2"></strong>
 		</div>
-		<div class="group">
-			<button class="btn shadow-pulse">CONTINUE TO FINAL STEP</button>
-			<button class="btn back js-scroll fade-bottom">PREVIOUS STEP</button>
-		</div>
-		<p>RexMD featured in</p>
-		<img src="../assets/img/logos.png" alt="">
+
+		<div class="show-991" hidden>
+			<div class="group">
+				<button class="btn shadow-pulse">CONTINUE TO FINAL STEP</button>
+				<button class="btn back js-scroll fade-bottom">PREVIOUS STEP</button>
+			</div>
+			<p>RexMD featured in</p>
+			<img src="../assets/img/logos.png" alt="">
+		</div>		
 	</div>
 
 	<div class="main-bottom">
 		<div class="images an an-opacity an-no">
 			<img src="../assets/img/hippa.jpeg" alt="" class="js-scroll fade-bottom">
-	        <img src="../assets/img/rexmd.jpg" alt="" class="js-scroll fade-bottom">
+	        <img src="../assets/img/rexmd.png" alt="" class="js-scroll fade-bottom">
 	        <img src="../assets/img/Privacy.jpeg" alt="" class="js-scroll fade-bottom">
 		</div>
 
@@ -58,15 +61,16 @@
 					var distance = tomorrow - now;
 					    
 					var hours = Math.floor((distance % (1000 * 60 * 60 * 8)) / (1000 * 60 * 60));
-					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)) - 51;
 					var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+					var miliseconds = distance % 1000;
 
 					hours = ("00" + hours).slice(-2);
 					minutes = ("00" + minutes).slice(-2);
 					seconds = ("00" + seconds).slice(-2);
 
-					document.getElementById("stopwatch-2").innerHTML = hours + ":" + minutes + ":" + seconds;			    
-				}, 1000);
+					document.getElementById("stopwatch-2").innerHTML = minutes + ":" + seconds + ":" + miliseconds;			    
+				}, 10);
 			},
 			animated(anim) {
 				let icons = document.querySelectorAll('.an-icon');
@@ -100,17 +104,18 @@
 
 <style scoped>
 	.main-bottom {
-	    padding: 155px 0 30px 0;
+	    padding: 30px 0 30px 0;
 	    text-align: center;
 	}
 	.main-bottom .images {
-	    margin: 45px 0 45px 0;
+	    margin: 0 0 45px 0;
 	}
 	.main-bottom .images img {
 	    margin: 0 10px;
 	}
 	.main-bottom .images img:nth-child(2) {
 		max-width: 170px;
+		width: 100%;
 	}
 	.main-bottom p {
 	    font: 13px var(--camptonBook);

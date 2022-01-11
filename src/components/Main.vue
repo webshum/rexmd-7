@@ -49,7 +49,7 @@
 			}
 		},
 		methods: {
-			addTimer() {
+			addTimer() {		
 				const today = new Date()
 				const tomorrow = new Date(today)
 				tomorrow.setDate(tomorrow.getDate() + 1);
@@ -59,15 +59,16 @@
 					var distance = tomorrow - now;
 					    
 					var hours = Math.floor((distance % (1000 * 60 * 60 * 8)) / (1000 * 60 * 60));
-					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)) - 51;
 					var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+					var miliseconds = distance % 1000;
 
 					hours = ("00" + hours).slice(-2);
 					minutes = ("00" + minutes).slice(-2);
 					seconds = ("00" + seconds).slice(-2);
 
-					document.getElementById("stopwatch").innerHTML = hours + ":" + minutes + ":" + seconds;			    
-				}, 1000);
+					document.getElementById("stopwatch").innerHTML = minutes + ":" + seconds + ":" + miliseconds;			    
+				}, 10);
 			}
 		},
 		mounted() {
@@ -106,7 +107,7 @@
 	.main-timer .timer {font-size: 20px;}
 	#stopwatch {
 		display: inline-block;
-		min-width: 90px;
+		min-width: 100px;
 		text-align: left;
 	}
 
