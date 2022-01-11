@@ -5,10 +5,14 @@
 		</div>
 
 		<div class="price-video">
-			<iframe src="https://player.vimeo.com/video/604162360?h=117e32a015" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen class="iframe" hidden></iframe>
+			<video src="https://res.cloudinary.com/conversion-labs-inc/video/upload/v1633637909/RexMD/videos/2830436526_zhz5ng.mp4" poster="img/king-video.png" class="video"></video>
 			<div class="inner">
 				<a href="#" class="btn-video btn-popup pulse-transform hide-991" data-popup="popup-video"></a>
 				<a href="#" class="btn-video pulse-transform show-991 d-none" @click="playVideo"></a>
+				<div class="btn-pause" @click="pauseVideo">
+					<span></span>
+					<span></span>
+				</div>
 			</div>
 		</div>
 
@@ -507,13 +511,18 @@
 			playVideo(e) {
 				e.preventDefault();
 
-				const iframe = document.querySelector('.iframe');
-                const player = new Vimeo.Player(iframe);
-                iframe.removeAttribute('hidden');
-                player.play();	
+				const video = document.querySelector('.video');
+                video.play();	
 
-                e.target.classList.add('play');
-                iframe.classList.add('play');
+                e.target.closest('.price-video').classList.add('play');
+			},
+			pauseVideo(e) {
+				e.preventDefault();
+
+				const video = document.querySelector('.video');
+                video.pause();	
+
+                e.target.closest('.price-video').classList.remove('play');
 			}
 		},
 		mounted() {
@@ -566,9 +575,6 @@
 	    border-radius: 0 15px 0 0;
 	    position: relative;
 	}
-	.price-video .inner {
-	    position: relative;
-	}
 	.price-video .btn-video {
 	    display: block;
 	    width: 64px;
@@ -589,19 +595,50 @@
 	.price-video .btn-video:hover {
 	    border-color: var(--red);
 	}
-	.price-video .btn-video.play {
-		display: none !important;
-	}
 
-	.price-video .iframe {
+	.price-video.play .video {display: block !important;}
+	.price-video.play .btn-video {display: none !important;}
+
+	.btn-pause {
+		background: rgba(255,255,255,.3);
+		display: block;
+	    width: 64px;
+	    height: 64px;
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    margin-top: -32px;
+	    margin-left: -32px;
+	    animation-name: pulse-transform;
+	    animation-duration: 1.5s;
+	    animation-iteration-count: infinite;
+	    border-radius: 50%;
+	    border: 2px solid transparent;
+	    transition: all 0.3s;
+	    display: none;
+	    align-items: center;
+    	justify-content: center;
+	}
+	.btn-pause span {
+		width: 5px;
+    	height: 35px;
+    	background: #fff;
+	}
+	.btn-pause span:first-child {
+		margin-right: 10px;
+	}
+	.price-video.play .btn-pause {display: flex;}
+
+	.price-video .video {
 		position: absolute;
-		top: 50%;
-		left: 50%;
-		z-index: 3;
-		transform: translate(-50%, -50%);
-		width: 100vw;
- 		height: calc(100vw/1.77);
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
  		display: none;
+ 		width: 100%;
+ 		height: 100%;
+ 		object-fit: cover;
 	}
 
 	.main-price h2 {
