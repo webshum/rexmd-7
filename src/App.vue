@@ -823,7 +823,7 @@
 			max-width: 25px;
 		}
 		#app .main-timer .timer {font-size: 14px;}
-		#app #stopwatch {min-width: 55px;}
+		#app #stopwatch {min-width: 60px;}
 
 		#app .flex {margin-top: 40px;}
 
