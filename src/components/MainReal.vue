@@ -166,7 +166,7 @@
 					<h3 class="js-scroll fade-bottom">Satisfaction <span>Guaranteed.</span></h3>
 					<p class="js-scroll fade-bottom">Improve your symptoms & lifestyle, worry-free.</p>
 					<img src="../assets/img/product.png" alt="">
-					<p class="js-scroll fade-bottom">If you’re not crazy about your results, just<br> contact us and we’ll take care of you. SImple!</p>
+					<p class="js-scroll fade-bottom">If you’re not crazy about your results, just<br> contact us and we’ll take care of you. Simple!</p>
 
 					<div class="show-991" hidden>
 						<h2 class="js-scroll fade-top">Quick. Simple.<br> <span>Safe. Convenient.</span></h2>

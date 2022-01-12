@@ -498,6 +498,15 @@
 
 	@media (max-width: 1150px) {
 		.main-real {max-width: 450px;}
+		.arr {
+			width: 70px;
+		    height: 100px;
+		    background-size: 70px;
+		    margin-bottom: -45px;
+		}
+
+		.wrap-timer .timer {font-size: 25px;}
+		.wrap-timer .timer strong {min-width: 125px;}
 	}
 
 	@media (max-width: 1050px) {
@@ -814,7 +823,7 @@
 			max-width: 25px;
 		}
 		#app .main-timer .timer {font-size: 14px;}
-		#app #stopwatch {min-width: 65px;}
+		#app #stopwatch {min-width: 75px;}
 
 		#app .flex {margin-top: 40px;}
 
@@ -887,6 +896,7 @@
 			max-width: 250px;
 			margin: 30px auto 10px auto !important;
 		}
+		.form-real .wrap ul:not(.list) li + li {margin-top: 0;}
 		.product {
 			margin-top: 15px;
 			padding: 25px;
