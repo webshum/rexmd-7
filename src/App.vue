@@ -960,7 +960,7 @@
 		    font-size: 14px;
 		}
 		.main-price h3 {
-		    font-size: 32px;
+		    font-size: 31px;
 		    line-height: 39px;
 		    margin-top: 35px;
 		    margin-bottom: 20px;
