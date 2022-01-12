@@ -362,7 +362,6 @@
 	.wrap-timer {
 		padding: 0 25px;
 		text-align: center;
-		margin-top: 230px;
 	}
 	.wrap-timer .ic-timer {
 		max-width: 110px;
@@ -487,9 +486,11 @@
 		}
 		.main-price .foot {font-size: 13px;}
 
+		/* FAQ */
+		.faq {margin-top: 130px;}
+
 		/* FOOTER */
 		.main-bottom {padding-top: 50px !important;}
-		.wrap-timer {margin-top: 130px;}
 	}
 
 	@media (max-width: 1200px) {
@@ -779,12 +780,18 @@
 		}
 		.main-price .foot br {display: block;}
 
+		/* FAQ */
+		.faq {margin-top: 50px;}
+		.faq h2.title {
+			font-size: 53px;
+			line-height: 60px;
+		}
+
 		/* FOOTER */
 		#app .popup iframe {
 			width: 600px;
 			height: 340px;
 		}
-		.wrap-timer {margin-top: 50px;}
 	}
 
 	@media (max-width: 650px) {
@@ -991,6 +998,24 @@
 		#app .popup-close {
 			top: -40px;
 			right: -35px;
+		}
+
+		/* FAQ */
+		.faq {padding-bottom: 30px;}
+		.faq h2.title {
+		    font-size: 38px;
+		    line-height: 42px;
+		}
+		.accordion__head {
+		    font-size: 17px;
+		    padding: 12px 15px 12px 40px;
+		}
+		.accordion__body {
+		    padding-left: 40px;
+		    padding-bottom: 20px;
+		    font-size: 15px;
+		    line-height: 25px;
+		    max-width: 700px;
 		}
 	}
 

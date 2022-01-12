@@ -1,4 +1,6 @@
 <template>
+	<Faq/>
+
 	<div class="show-991 wrap-timer">
 		<lottie-animation
 		    path="lottie/timer.json"
@@ -39,11 +41,12 @@
 
 <script>
 	import Popup from "@/components/Popup";
+	import Faq from "@/components/Faq";
 	import LottieAnimation from "lottie-vuejs/src/LottieAnimation.vue";
 
 	export default {
 		components: {
-			Popup, LottieAnimation
+			Popup, LottieAnimation, Faq
 		},
 		data() {
 			return {
