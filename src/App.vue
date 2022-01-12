@@ -968,7 +968,7 @@
 			font-size: 20px;
 		}
 		.wrap-timer .timer strong {
-			min-width: 100px;
+			min-width: 105px;
 		}
 		#app .main-bottom {
 			padding: 30px 15px !important;
