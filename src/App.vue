@@ -376,7 +376,7 @@
 	.wrap-timer .timer strong {
 		font-weight: 500;
 		display: inline-block;
-		min-width: 170px;
+		min-width: 155px;
 		text-align: left;
 	}
 	.wrap-timer .group {margin-top: 30px;}
@@ -506,7 +506,7 @@
 		}
 
 		.wrap-timer .timer {font-size: 25px;}
-		.wrap-timer .timer strong {min-width: 125px;}
+		.wrap-timer .timer strong {min-width: 110px;}
 	}
 
 	@media (max-width: 1050px) {
@@ -823,7 +823,7 @@
 			max-width: 25px;
 		}
 		#app .main-timer .timer {font-size: 14px;}
-		#app #stopwatch {min-width: 75px;}
+		#app #stopwatch {min-width: 55px;}
 
 		#app .flex {margin-top: 40px;}
 
@@ -968,7 +968,7 @@
 			font-size: 20px;
 		}
 		.wrap-timer .timer strong {
-			min-width: 105px;
+			min-width: 90px;
 		}
 		#app .main-bottom {
 			padding: 30px 15px !important;

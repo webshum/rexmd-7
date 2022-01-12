@@ -61,11 +61,11 @@
 					var hours = Math.floor((distance % (1000 * 60 * 60 * 8)) / (1000 * 60 * 60));
 					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)) - 51;
 					var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-					var miliseconds = distance % 1000;
+					var miliseconds = Math.floor(distance % 60, 10);
 
-					hours = ("00" + hours).slice(-2);
-					minutes = ("00" + minutes).slice(-2);
-					seconds = ("00" + seconds).slice(-2);
+					minutes = minutes < 10 ? "0" + minutes : minutes;
+	                seconds = seconds < 10 ? "0" + seconds : seconds;
+	                miliseconds = miliseconds < 10 ? "0" + miliseconds : miliseconds;
 
 					document.getElementById("stopwatch").innerHTML = minutes + ":" + seconds + ":" + miliseconds;			    
 				}, 10);
