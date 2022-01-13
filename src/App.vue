@@ -503,6 +503,8 @@
 		    background-size: 300px;
 		    top: 230px;
 		}
+		.accordion__head {font-size: 16px;}
+		.accordion__body {max-width: 700px;}
 	}
 
 	@media (max-width: 1150px) {
