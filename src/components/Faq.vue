@@ -194,7 +194,7 @@
 	  	line-height: 36px;
 	  	letter-spacing: 1px;
 	  	font-weight: 300;
-	  	max-width: 1100px;
+	  	max-width: 900px;
 	}
 	.accordion__body p + p {margin-top: 36px;}
 
