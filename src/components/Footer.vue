@@ -76,7 +76,7 @@
 	                	clearInterval(x);
 	                }
 
-					document.getElementById("stopwatch").innerHTML = minutes + ":" + seconds + ":" + miliseconds;			    
+					document.getElementById("stopwatch-2").innerHTML = minutes + ":" + seconds + ":" + miliseconds;			    
 				}, 10);
 			},
 			animated(anim) {
