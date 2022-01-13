@@ -59,8 +59,7 @@
 					var distance = tomorrow - now;
 					    
 					var hours = Math.floor((distance % (1000 * 60 * 60 * 8)) / (1000 * 60 * 60));
-					// var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)) - 51;
-					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)) - 58;
+					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)) - 51;
 					var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 					var miliseconds = Math.floor(distance % 60, 10);
 

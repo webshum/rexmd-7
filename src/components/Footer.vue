@@ -72,11 +72,16 @@
 	                seconds = seconds < 10 ? "0" + seconds : seconds;
 	                miliseconds = miliseconds < 10 ? "0" + miliseconds : miliseconds;
 
-	                if (minutes == 0 && seconds == 0 && miliseconds == 0) {
+	                if (minutes == 0) minutes = '00';
+	                if (seconds == 0) seconds = '00';
+	                if (miliseconds == 0) miliseconds = '00';
+
+	                if (minutes == 0 && seconds == 0) {
 	                	clearInterval(x);
+	                	miliseconds = '00';
 	                }
 
-					document.getElementById("stopwatch-2").innerHTML = minutes + ":" + seconds + ":" + miliseconds;			    
+					document.getElementById("stopwatch").innerHTML = minutes + ":" + seconds + ":" + miliseconds;			    
 				}, 10);
 			},
 			animated(anim) {
