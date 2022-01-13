@@ -1,5 +1,11 @@
 <template>
 	<section class="faq">
+		<span class="after"></span>
+
+		<div class="thumb" hidden>
+			<img src="img/bg-faq.jpg" alt="">
+		</div>
+
 		<div class="center">
 			<h2 class="title js-scroll fade-top">Frequently<br hidden> Asked <span>Questions</span></h2>
 
@@ -123,6 +129,20 @@
 		padding-bottom: 70px;
 		position: relative;
 	}
+	.faq .after {
+	    display: block;
+	    width: 450px;
+	    height: 530px;
+	    background: url(../assets/img/hand.png) no-repeat;
+	    background-size: 450px;
+	    position: sticky;
+	    top: 150px;
+	    right: 0;
+	    float: right;
+	    z-index: 2;
+	    transition: all 0.3s;
+	}
+
 	.faq h2.title {
 		font-size: 67px;
 		line-height: 69px;

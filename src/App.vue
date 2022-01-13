@@ -495,6 +495,14 @@
 
 	@media (max-width: 1200px) {
 		.main-real {max-width: 500px;}
+
+		/* FAQ */
+		.faq .after {
+		    width: 300px;
+		    height: 430px;
+		    background-size: 300px;
+		    top: 230px;
+		}
 	}
 
 	@media (max-width: 1150px) {
@@ -786,6 +794,7 @@
 			font-size: 53px;
 			line-height: 60px;
 		}
+		.faq .after {display: none;}
 
 		/* FOOTER */
 		#app .popup iframe {
