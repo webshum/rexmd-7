@@ -59,7 +59,8 @@
 					var distance = tomorrow - now;
 					    
 					var hours = Math.floor((distance % (1000 * 60 * 60 * 8)) / (1000 * 60 * 60));
-					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)) - 51;
+					// var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)) - 51;
+					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)) - 58;
 					var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 					var miliseconds = Math.floor(distance % 60, 10);
 
@@ -67,8 +68,13 @@
 	                seconds = seconds < 10 ? "0" + seconds : seconds;
 	                miliseconds = miliseconds < 10 ? "0" + miliseconds : miliseconds;
 
-	                if (minutes == 0 && seconds == 0 && miliseconds == 0) {
+	                if (minutes == 0) minutes = '00';
+	                if (seconds == 0) seconds = '00';
+	                if (miliseconds == 0) miliseconds = '00';
+
+	                if (minutes == 0 && seconds == 0) {
 	                	clearInterval(x);
+	                	miliseconds = '00';
 	                }
 
 					document.getElementById("stopwatch").innerHTML = minutes + ":" + seconds + ":" + miliseconds;			    
