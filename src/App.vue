@@ -172,6 +172,8 @@
 	.c-red {color: var(--red) !important;}
 	.f-500 {font-weight: 500 !important;}
 
+	.tx-center {text-align: center;}
+
 	.btn {
 		display: flex;
 		align-items: center;
@@ -411,6 +413,22 @@
 
 		.main-price .inner {max-width: 350px;}
 		.main-price .foot br {display: none;}
+
+		#app .popup .wrap {
+			font-size: 14px;
+			line-height: 1.5;
+		}
+		#app .popup .wrap h5 {
+			margin-top: 15px;
+			padding: 10px 0;
+		}
+		#app .popup .wrap h4 {
+			font-size: 25px;
+			margin: 15px 0;
+		}
+		#app .popup .wrap ul {
+			margin-top: 15px;
+		}
 	}
 
 	@media (max-width: 1300px) {
@@ -803,6 +821,15 @@
 			width: 600px;
 			height: 340px;
 		}
+
+		/* POPUP */
+		#app .popup-info, .popup-home {
+		    max-width: 100%;
+		}
+		#app .modal-title {
+		    font-size: 30px;
+		    line-height: 35px;
+		}
 	}
 
 	@media (max-width: 650px) {
@@ -1009,6 +1036,10 @@
 		#app .popup-close {
 			top: -40px;
 			right: -35px;
+		}
+		#app .popup-info .popup-close {
+			top: 15px;
+			right: 15px;
 		}
 
 		/* FAQ */

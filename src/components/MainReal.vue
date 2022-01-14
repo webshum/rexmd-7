@@ -162,6 +162,10 @@
 					</li>
 				</ul>
 
+				<div class="tx-center">
+					<a href="#" class="btn-popup" data-popup="popup-info">Important Safety Information</a>
+				</div>				
+
 				<div class="product">
 					<h3 class="js-scroll fade-bottom">Satisfaction <span>Guaranteed.</span></h3>
 					<p class="js-scroll fade-bottom">Improve your symptoms & lifestyle, worry-free.</p>
@@ -212,6 +216,7 @@
 
 <script>
 	import LottieAnimation from "lottie-vuejs/src/LottieAnimation.vue";
+	import Popup from "@/components/Popup";
 
 	export default {
 		components: {
@@ -246,6 +251,14 @@
 </script>
 
 <style>
+	a[data-popup="popup-info"] {
+		display: inline-block;
+		font-size: 17px;
+		color: #a20e1e;
+		text-decoration: none;
+	}
+	a[data-popup="popup-info"]:hover {text-decoration: underline;}
+
 	.main-real {
 	    width: 100% !important;
     	max-width: 630px;
