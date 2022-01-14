@@ -505,7 +505,7 @@
 		.main-price .foot {font-size: 13px;}
 
 		/* FAQ */
-		.faq {margin-top: 130px;}
+		.faq {margin-top: 230px;}
 
 		/* FOOTER */
 		.main-bottom {padding-top: 50px !important;}

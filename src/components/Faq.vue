@@ -125,7 +125,7 @@
 
 <style>
 	.faq {
-		margin-top: 230px;
+		margin-top: 300px;
 		padding-bottom: 70px;
 		position: relative;
 	}

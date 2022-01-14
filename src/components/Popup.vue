@@ -305,6 +305,10 @@
 	    background: #fff;
 	    font-size: 18px;
 	}
+	.popup-info .modal-header .wrap {
+	    max-height: 80vh;
+	    overflow-y: auto;
+	}
 	.popup .wrap p + p {margin-top: 30px;}
 	.popup .wrap h4 {margin: 30px 0;}
 	.popup .wrap h5 {
