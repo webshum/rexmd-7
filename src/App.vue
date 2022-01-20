@@ -906,7 +906,7 @@
 		    min-height: 80px;
 		    position: absolute;
 		    top: -17px;
-		    right: -18px;
+		    right: -19px;
 		}
 		.form-real .wrap {
 		    padding: 25px;
