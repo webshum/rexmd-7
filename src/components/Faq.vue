@@ -30,7 +30,7 @@
 					</div>
 					<div class="accordion__head">Why shouldn't I order this product?</div>
 					<div class="accordion__body" style="display: none;">
-						<p>We still can’t figure that out! Online consultations are completely free and prescriptions are written by a licensed doctor or nurse practitioner. You'll have genuine ED medications, prescribed online and delivered directly from the pharmacy at the lowest price, guaranteed.It's fast, easy, discreet and MUCH more affordable!</p>
+						<p>We still can’t figure that out! Online consultations are completely free and prescriptions are written by a licensed doctor or nurse practitioner. You'll have genuine ED medications, prescribed online and delivered directly from the pharmacy at the lowest price, guaranteed. It's fast, easy, discreet and MUCH more affordable!</p>
 					</div>					
 				</div>
 			</div>

@@ -364,6 +364,7 @@
 	.wrap-timer {
 		padding: 0 25px;
 		text-align: center;
+		clear: both;
 	}
 	.wrap-timer .ic-timer {
 		max-width: 110px;
